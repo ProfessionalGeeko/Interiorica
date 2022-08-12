@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0fcf796f-fa1d-46af-bd9b-780779ca462e/deploy-status)](https://app.netlify.com/sites/interiorica/deploys)
+
 ## Project Setup
 
 Please follow below steps to setup & run project locally:
