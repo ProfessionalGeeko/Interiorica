@@ -1,0 +1,40 @@
+
+.Item-1 {
+    height:800px;
+    margin-left:25px
+}
+.Item-1 >img {
+    height:800px;
+    object-fit:cover
+}
+.Item-2{
+    height:800px;
+    margin-right:25px;
+    display:table-cell;
+    vertical-align:middle;
+    padding:30px;
+}
+.Item-2>h1 {
+    font-size: 72px;
+    font-weight: bold;
+    line-height: 1.25em;
+    text-align: center;
+    color:rgb(30, 32, 37);
+}
+.Item-2 > div {
+    align-items:center;
+    text-align:center;
+}
+.Item-2 >div> button{
+    margin-top:60px
+}
+.description  {
+    text-align:center;
+    line-height:1.875em;
+    font-size:15px;
+}
+.subtitle {
+   font-size:20px;
+   text-align:center;
+   line-height:1.25em;
+}

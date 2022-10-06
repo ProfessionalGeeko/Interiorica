@@ -1,0 +1,41 @@
+.wrapper {
+    background-color:rgb(208,193,186);
+    padding:30px;
+    position:static;
+    display:grid;
+    height:auto;
+    width:100%;
+    min-height:1120px;
+    grid-template-rows: 1fr;
+    grid-template-columns: 100%;
+    margin-bottom: 60px;
+}
+.Image-container {
+   position:relative;
+   margin:120px 0px 10px calc((100% - 980px) * 0.5);
+   left:400px;
+   grid-area:1 / 1 / 2 / 2;
+   justify-self:start;
+   align-self:start
+}
+.Image-container > img {
+    width:560px;
+    height:730px;
+    object-fit:cover;
+    object-position:50% 50%
+}
+.Description {
+    display:block;
+    text-align:left;
+    background-color:black;
+    color:white;
+    padding:40px;
+    min-height:392px;
+    max-width:460px;
+    position:relative;
+    margin:182px 0px 10px calc((100% - 980px) * 0.5);
+    left: 20px;
+    grid-area:1 / 1 / 2 / 2;
+    justify-self:start;
+    align-self:start
+}
