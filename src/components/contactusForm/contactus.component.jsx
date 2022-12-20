@@ -4,7 +4,7 @@ import {
   Stack,
   Box,
   TextField,
-  Button
+  Button,
 } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -28,7 +28,7 @@ const ContactUsForm = () => {
         md={6}
         xs={12}
         justifyContent="center"
-        paddingX={12}
+        paddingX={2}
         paddingY={6}
       >
         <Typography variant="h4">Contact Us</Typography>
@@ -54,15 +54,31 @@ const ContactUsForm = () => {
           noValidate
           autoComplete="off"
         >
-          <div>
-            <TextField sx={{marginRight: 1}} id="standard-error" label="Name" variant="standard" margin="normal" m={1} />
+          <Grid
+            container
+            spacing={1}
+          >
+            <Grid
+              item
+              md={6}
+              xs={12}
+            >
+               <TextField fullWidth id="standard-error" label="Name" variant="standard" margin="normal" />
+            </Grid>
+            <Grid
+              item
+              md={6}
+              xs={12}
+            >
             <TextField
+              fullWidth
               id="standard-error-helper-text"
               label="Email"
               variant="standard"
               margin="normal"
             />
-          </div>
+            </Grid>
+          </Grid>
           <div>
             <TextField
               fullWidth
