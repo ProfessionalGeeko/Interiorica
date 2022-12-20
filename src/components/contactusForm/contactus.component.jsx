@@ -29,6 +29,7 @@ const ContactUsForm = () => {
         xs={12}
         justifyContent="center"
         paddingX={12}
+        paddingY={6}
       >
         <Typography variant="h4">Contact Us</Typography>
         <Typography variant="body2" component="div" marginY={2}>
