@@ -1,15 +1,4 @@
-.project_wrapper {
-    background-color:rgb(208,193,186);
-    padding:30px;
-    position:static;
-    display:grid;
-    height:auto;
-    width:100%;
-    min-height:fit-content;
-    grid-template-rows: 1fr;
-    grid-template-columns: 100%;
-    
-}
+
 .parent{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -28,19 +17,19 @@
     
 }
 .header{
-    font-weight: bold;
-    font-size: 22px;
+    margin-top: 20%;
+    font-weight: 10px;
+    font-size: 1.5rem;
     line-height: 1.41em;
     position: relative;
-    margin: 148px 0px 44px calc((100% - 490px) * 0.5);
-    left: 15px;
+    left: 3%;
     grid-area: 1 / 1 / 2 / 2;
     justify-self: start;
     color: rgb(208,193,186);
     font-family: poppins,sans-serif;
 }
 .sub-header{
-    margin: 0px 0px 31px calc((100% - 490px) * 0.5);
+    margin-top: 10%;
     position: relative;
     left: 15px;
     grid-area: 2 / 1 / 3 / 2;
@@ -51,7 +40,7 @@
     font-family: poppins,sans-serif;
     font-style:italic;
     line-height:1.75em;
-    font-size:22px;
+    font-size: 1.3em;
     --column-width: 490px;
     --column-flex: 490;
     font-family: 'times new roman',times,serif;
@@ -61,8 +50,8 @@
     height: auto;
     width: 460px;
     position: relative;
-    margin: 0px 0px 10px calc((100% - 490px) * 0.5);
-    left: 15px;
+    margin-top: 10%;
+    left: 3%;
     grid-area: 3 / 1 / 4 / 2;
     justify-self: start;
     overflow-wrap: break-word;
@@ -73,13 +62,17 @@
     --column-flex: 490;
     text-align: left;
     line-height: 1.875em;
-    font-size: 19px;
+    font-size: 1em;
     font-family: raleway,sans-serif;
     color: rgb(255,255,255);
 }
-h3{
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+
+
+.Project_Image_Container{
+    position: relative;
+   
+}
+
+img{
+    height: max-content;
 }

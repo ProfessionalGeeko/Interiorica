@@ -1,0 +1,55 @@
+@import "~bootstrap/scss/bootstrap";
+.Reviews-section{
+    background-color: rgb(30,32,37);
+    margin-left: 6%;
+    margin-right: 5%;
+    height: 1200px !important;
+    position: relative;
+}
+.carousel-div{  
+    background-color: rgb(30,32,37);
+    width: 70%;
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+}
+.Item{
+    padding-top: 5%;
+    background-color: rgb(255,255,255);
+    height: 360px;
+    color: rgb(30,32,37);
+    font-size: 1.1em;
+    line-height:1.875em; 
+    font-family:  raleway, sans-serif;
+    padding-left: 5%;
+    padding-right: 5%;
+
+}
+.Item-caption{
+    color: black;
+    text-align: left;
+}
+.carousel-caption{
+    left: 6% ;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 100px;
+  width: 100px;
+  background-size: 100%, 100%;
+  border-radius: 50%;
+  background-image: none;
+}
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 55px;
+  color: red;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 55px;
+  color: red;
+}

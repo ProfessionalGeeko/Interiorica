@@ -9,7 +9,7 @@ export default function Projects({data, image}) {
                 <div className='parent'>
                     <div className='description'>
                         <div className='header'>
-                        <h3>{data.Header}</h3>
+                        <p>{data.Header}</p>
                         </div>
                         <div className='sub-header'>
                             <span>{data.Sub_header}</span>
@@ -21,7 +21,9 @@ export default function Projects({data, image}) {
                         </div>
                         
                     </div>
-                    <div><img src={image} alt="Project" width="100%" /></div>
+                    <div className='Project_Image_Container'>
+                        <img src={image} alt="Project" width="100%" />
+                    </div>
                 </div>
                 
             </div>

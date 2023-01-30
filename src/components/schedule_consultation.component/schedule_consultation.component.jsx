@@ -9,7 +9,7 @@ export default function Projects({data, image}) {
                 <div className='consult_descr'>
                     <p>Ready to get started? Contact us today to make your design dreams a reality.</p>
                 </div>
-                <Button variant="contained" size="medium" >Schedule a Consultation</Button>
+                <Button variant="contained" size="medium"  className="Schedule_consult">Schedule a Consultation</Button>
             </div>
     );
 }

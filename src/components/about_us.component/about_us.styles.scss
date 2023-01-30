@@ -4,7 +4,6 @@
     position:static;
     display:grid;
     height:auto;
-    width:100%;
     min-height:1120px;
     grid-template-rows: 1fr;
     grid-template-columns: 100%;
@@ -12,7 +11,7 @@
 }
 .Image-container {
    position:relative;
-   margin:120px 0px 10px calc((100% - 980px) * 0.5);
+   margin:10% 0px 10px calc((100% - 980px) * 0.5);
    left:400px;
    grid-area:1 / 1 / 2 / 2;
    justify-self:start;
@@ -33,8 +32,8 @@
     min-height:392px;
     max-width:460px;
     position:relative;
-    margin:182px 0px 10px calc((100% - 980px) * 0.5);
-    left: 20px;
+    margin-top: 15%;
+    left: 5%;
     grid-area:1 / 1 / 2 / 2;
     justify-self:start;
     align-self:start
