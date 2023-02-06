@@ -1,0 +1,25 @@
+.Schedule_consult{
+    position: relative;
+    left: 40%;
+    grid-area: 6 / 1 / 7 / 2;
+    justify-self: start;
+    --column-width: 980px;
+    --column-flex: 980;
+    width: 300px;
+    background-color: rgb(32,35,37) !important;
+    min-height: 50px;
+    font-size: 1em;
+}
+.consult_descr{
+    margin-top: 14% !important;
+    text-align: center;
+    color: rgb(32,35,37);
+    font-size: medium;
+    font-style: italic;
+    font-weight: bold;
+    line-height: 1.875em;
+    text-align: center;
+    font-size: 18px;
+    margin-block-start: 4em;
+    margin-block-end: 3em;
+}
