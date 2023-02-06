@@ -1,7 +1,6 @@
 import React from 'react';
-import about_us from '../../assets/images/about_us.webp';
 import Button from '@mui/material/Button';
-import styles from './schedule_consultation.styles.scss';
+import  './schedule_consultation.styles.scss';
 
 export default function Projects({data, image}) {
     return (

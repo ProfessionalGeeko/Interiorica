@@ -104,22 +104,22 @@ export default function Reviews_content() {
                 
                     <Grid container spacing={1} style={{height:"400px",backgroundColor:"#1E2025"}} >
                         <Grid item xs={6}>
-                            <img src={review_bg} ></img>
+                            <img src={review_bg} alt="review_img"></img>
                         </Grid>
                         <Grid item xs={6}>
-                            <img src={review_bg} ></img>
+                            <img src={review_bg} alt="review_img"></img>
                         </Grid>
                         <Grid item xs={6}>
-                            <img src={review_bg} ></img>
+                            <img src={review_bg} alt="review_img"></img>
                         </Grid>
                         <Grid item xs={6}>
-                            <img src={review_bg} ></img>
+                            <img src={review_bg} alt="review_img"></img>
                         </Grid>
                     </Grid>
                 
                 </Grid>
                 <Grid item xs={6} style={{height:"410px"}}  >
-                <img src={galary_5} width="contain"></img>
+                <img src={galary_5} width="contain" alt="review_img"></img>
                 </Grid>
             </Grid>
             <Button variant="contained" size="medium"  style={{marginLeft:"40%"}} >
