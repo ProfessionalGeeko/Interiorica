@@ -40,7 +40,7 @@ export default function Reviews_content() {
                 understands client's needs but also give the client the best
                 approach for the work.
                 <br />
-                <b>THANK YOU TEAM VIVID DESIGN.</b>
+                <b>THANK YOU TEAM Interiorica.</b>
               </p>
             </div>
             <Carousel.Caption>
@@ -52,12 +52,12 @@ export default function Reviews_content() {
           <Carousel.Item>
             <div className="Item">
               <p>
-                Vivid Design was recommended to me by a friend and it turned out
+              Interiorica Design was recommended to me by a friend and it turned out
                 to be a great decision for me.The quality and dedication you get
                 is something I never seen before. Even after the services are
                 given they make sure that everything at its best.
                 <br />
-                So I would really recommend Vivid design, you won't be
+                So I would really recommend Interiorica, you won't be
                 disappointed.
               </p>
             </div>
