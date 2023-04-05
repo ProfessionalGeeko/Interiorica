@@ -5,9 +5,13 @@ import  styles from './intro.styles.scss';
 import React from 'react';
 import { styled } from '@mui/material/styles';
 import { Typography } from '@mui/material';
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 
-const Container = styled('div')({
+export default function AboutUs(){
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  
+  const Container = styled('div')({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
@@ -17,54 +21,55 @@ const Container = styled('div')({
     margin: '0 auto',
     overflow: 'hidden',
     paddingBottom:"10em",
-    marginTop:"10em"
+    marginTop:"10em",
+    backgroundColor: `${prefersDarkMode ? 'rgb(30, 32, 37)': ''}`
   });
-  
 
-const ImageContainer = styled('div')({
+
+  const ImageContainer = styled('div')({
   flex: '1 1 300px',
   height: '100%',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-});
+  });
 
-const Image = styled('img')({
+  const Image = styled('img')({
     height: '700px',
     objectFit: 'contain'
   });
 
 
-const DescriptionContainer = styled('div')({
+  const DescriptionContainer = styled('div')({
     flex: '1 1 ',
     padding: '2rem',
     marginLeft: '2rem',
     marginRight: '2rem',
   });
-  
-    const Title = styled(Typography)({
-    fontWeight: 'bold',
-    fontSize: '3rem',
-    marginBottom: '3rem',
-    textAlign: 'center',
-    });
 
-    const Subtitle = styled(Typography)({
-    fontWeight: 'bold',
-    fontSize: '1.6rem',
-    marginBottom: '2rem',
-    textAlign: 'center',
-    });
+  const Title = styled(Typography)({
+  fontWeight: 'bold',
+  fontSize: '3rem',
+  marginBottom: '3rem',
+  textAlign: 'center',
+  });
 
-    const Content = styled(Typography)({
-    fontSize: '1.2rem',
-    lineHeight: '1.5',
-    marginBottom: '1rem',
-    textAlign: 'center',
-    });
+  const Subtitle = styled(Typography)({
+  fontWeight: 'bold',
+  fontSize: '1.6rem',
+  marginBottom: '2rem',
+  textAlign: 'center',
+  });
+
+  const Content = styled(Typography)({
+  fontSize: '1.2rem',
+  lineHeight: '1.5',
+  marginBottom: '1rem',
+  textAlign: 'center',
+  });
 
 
-const responsiveStyles = {
+  const responsiveStyles = {
   '@media (max-width: 960px)': {
     flexDirection: 'column-reverse',
     marginLeft: '0',
@@ -77,9 +82,9 @@ const responsiveStyles = {
       height: '900px',
     },
   },
-};
+  };
 
-export default function AboutUs(){
+
   return (
     <div className={styles.parentContainer}>
     <Container sx={responsiveStyles}>

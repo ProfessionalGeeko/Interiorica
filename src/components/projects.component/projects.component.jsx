@@ -1,15 +1,18 @@
 import React from 'react';
 import { styled } from '@mui/material/styles';
 import { Typography } from '@mui/material';
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 
-const Container = styled('div')({
+export default function Projects({data, image}){
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  const Container = styled('div')({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
     justifyContent: 'flex-start',
-    backgroundColor: '#f5f5f5',
+    backgroundColor: `${prefersDarkMode ? 'rgb(30,32,37);': ''}` ,
     marginBottom: '4rem',
     maxWidth: '95%',
     margin: '0 auto',
@@ -22,32 +25,26 @@ const Container = styled('div')({
   });
   
 
-const ImageContainer = styled('div')({
-  flex: '1 1 300px',
-  height: '100%',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-});
-
-const Image = styled('img')({
-  maxWidth: '100%',
-  maxHeight: '100%',
-  objectFit: 'contain'
-});
-
-// const DescriptionContainer = styled('div')({
-//   flex: '1 1 300px',
-//   padding: '1rem',
-//   marginLeft: '6rem',
-// });
-
-const DescriptionContainer = styled('div')({
+  const ImageContainer = styled('div')({
     flex: '1 1 300px',
-    padding: '2rem',
-    marginLeft: '2rem',
-    marginRight: '2rem',
+    height: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
   });
+
+  const Image = styled('img')({
+    maxWidth: '100%',
+    maxHeight: '100%',
+    objectFit: 'contain'
+  });
+
+  const DescriptionContainer = styled('div')({
+      flex: '1 1 300px',
+      padding: '2rem',
+      marginLeft: '2rem',
+      marginRight: '2rem',
+    });
   
   const Title = styled(Typography)({
     fontWeight: 'bold',
@@ -68,22 +65,21 @@ const DescriptionContainer = styled('div')({
   });
   
 
-const responsiveStyles = {
-  '@media (max-width: 960px)': {
-    flexDirection: 'column-reverse',
-    marginLeft: '0',
-    '& $DescriptionContainer': {
+  const responsiveStyles = {
+    '@media (max-width: 960px)': {
+      flexDirection: 'column-reverse',
       marginLeft: '0',
-      padding: '1rem 2rem',
+      '& $DescriptionContainer': {
+        marginLeft: '0',
+        padding: '1rem 2rem',
+      },
+      '& $ImageContainer': {
+        flex: '1 1 100%',
+        height: '300px',
+      },
     },
-    '& $ImageContainer': {
-      flex: '1 1 100%',
-      height: '300px',
-    },
-  },
-};
+  };
 
-export default function Projects({data, image}){
   return (
     <Container sx={responsiveStyles}>
       <DescriptionContainer>

@@ -9,7 +9,7 @@ import './card.component.styles.scss';
 
 export default function CardComponent() {
   return (
-    <Card sx={{ maxWidth: 345 }} style={{"margin-left":"10%","margin-right": "10%"}}>
+    <Card sx={{ maxWidth: 345 }} style={{"marginLeft":"10%","marginRight": "10%"}}>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -27,7 +27,7 @@ export default function CardComponent() {
         </CardContent>
       </CardActionArea>
       <CardActions>
-      <Button variant="contained" size="medium"  className='Workshop-details'>
+      <Button variant="contained" size="medium"  className='Workshop-details' style={{color:"#fff"}}>
         Details
        </Button>
       </CardActions>

@@ -16,13 +16,15 @@ import Reviews from './components/reviews.component/reviews.component.component'
 import ReviewsContent from './components/reviews_content.component/reviews_content.component';
 
 function App() {
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
   useEffect(() => {
     const bodyStyle = document.body.style;
     bodyStyle.minWidth = '600px';
     bodyStyle.width = '100%';
     bodyStyle.height = '100%';
+    bodyStyle.backgroundColor = `${prefersDarkMode ? '#ffff': '#ffff'}`
   }, []);
-  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  
 
   const theme = React.useMemo(
     () =>
