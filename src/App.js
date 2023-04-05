@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useEffect } from 'react';
 import './App.css';
 
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -17,6 +17,14 @@ import ReviewsContent from './components/reviews_content.component/reviews_conte
 
 function App() {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  useEffect(() => {
+    const bodyStyle = document.body.style;
+    bodyStyle.minWidth = '600px';
+    bodyStyle.width = '100%';
+    bodyStyle.height = '100%';
+    bodyStyle.backgroundColor = `${prefersDarkMode ? '#ffff': '#ffff'}`
+  }, []);
+  
 
   const theme = React.useMemo(
     () =>

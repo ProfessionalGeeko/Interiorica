@@ -1,46 +1,7 @@
 
-.Item-1 {
-    height:800px;
-    margin-left:5%;
-}
-.Item-1 >img {
-    height:800px;
-    object-fit:cover
-}
-.Item-2{
-    height:800px;
-    margin-right:5%;
-    display:table-cell;
-    vertical-align:middle;
-    padding:30px;
-}
-.Item-2>h1 {
-    font-size: 72px;
-    font-weight: bold;
-    line-height: 1.25em;
-    text-align: center;
-    color:rgb(30, 32, 37);
-}
-.Item-2 > div {
-    align-items:center;
-    text-align:center;
-}
-.Item-2 >div> button{
-    margin-top:60px
-}
-.desc  {
-    margin-top: 10%;
-    text-align:center;
-    line-height:1.875em;
-    font: size 1.2em;
-    font-weight: 400;
-    background-color: white;
-    margin-left: 5%;
-    margin-right: 4%;
-}
-.subtitle {
-    margin-top: 3%;
-   font-size:20px;
-   text-align:center;
-   line-height:1.25em;
-}
+.parentContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
