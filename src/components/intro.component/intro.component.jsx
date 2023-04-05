@@ -92,7 +92,7 @@ export default function AboutUs({isFocus}){
 
 
   return (
-    <div id="Intro" className={styles.parentContainer}>
+    <div id="Home" className={styles.parentContainer}>
     <Container sx={responsiveStyles}>
         <ImageContainer>
         <Image src={intro_img} alt="My Image" />
