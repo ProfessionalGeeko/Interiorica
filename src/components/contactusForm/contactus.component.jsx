@@ -16,6 +16,7 @@ const ContactUsForm = () => {
   return (
     <Grid
       container
+      id="contact"
       sx={{ backgroundColor: "#D0C1BA" }}
       paddingY={6}
       paddingX={8}

@@ -27,7 +27,7 @@ export default function Reviews_content() {
   }));
 
   return (
-    <div className="Reviews-section">
+    <div id="Workshop" className="Reviews-section">
       <div className="carousel-div">
         <Carousel activeIndex={index} onSelect={handleSelect}>
           <Carousel.Item>

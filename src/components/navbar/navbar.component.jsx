@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const pages = ['Home', 'Projects', 'Services', 'Process', 'Workshop', 'About'];
 
-const Navbar = () => {
+const Navbar = (props) => {
   const [anchorElNav, setAnchorElNav] = useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -38,7 +38,7 @@ const Navbar = () => {
           <IconButton size="large" edge="start" color="inherit" aria-label="logo">
             {/* <img src={logo} alt="Logo" /> */}
           </IconButton>
-          <Button variant="outlined">Contact Us</Button>
+          <Button href='#contact' variant="outlined">Contact Us</Button>
         </Stack>
         <Stack
           direction="row"
@@ -77,7 +77,7 @@ const Navbar = () => {
                   }}
                 >
                   {pages.map((page) => (
-                    <MenuItem key={page} onClick={handleCloseNavMenu}>
+                    <MenuItem key={page} href={`#${page}`}>
                       <Typography textAlign="center">{page}</Typography>
                     </MenuItem>
                   ))}
@@ -87,7 +87,7 @@ const Navbar = () => {
                 {pages.map((page) => (
                   <Button
                     key={page}
-                    onClick={handleCloseNavMenu}
+                    href={`#${page}`}
                     sx={{ my: 2, color: 'white', display: 'block' }}
                   >
                     {page}

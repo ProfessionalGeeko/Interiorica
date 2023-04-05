@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import about_us from '../../assets/images/about_us.webp';
 import Button from '@mui/material/Button';
 import styles from './about_us.styles.scss';
 
-export default function AboutUs() {
+export default function AboutUs({isFocus}) {
     return (
-            <div className='wrapper'>
+            <div id="About" className='wrapper'>
                 <div className='Image-container'>
                     <img src={about_us} alt="about_us" width="100%" />
                 </div>

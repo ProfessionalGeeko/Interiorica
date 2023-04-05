@@ -6,7 +6,7 @@ import review_bg from '../../assets/images/Reviews_background.webp';
 export default function Reviews() {
     return (
             // create a wrpapper with a background image
-            <div className='Reviews-wrapper' style={{backgroundImage: `url(${review_bg})`,backgroundRepeat:"no-repeat"}} >
+            <div id="Process" className='Reviews-wrapper' style={{backgroundImage: `url(${review_bg})`,backgroundRepeat:"no-repeat"}} >
                 
                 <div className='Reviews-header'>Real Life Reviews</div>
                 <div className='Reviews-sub-header'><h5>The Word on the Street</h5></div>

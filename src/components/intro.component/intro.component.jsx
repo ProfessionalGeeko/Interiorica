@@ -2,14 +2,20 @@
 import intro_img from '../../assets/images/intro_img.jpg';
 import Button from '@mui/material/Button';
 import  styles from './intro.styles.scss';
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import { styled } from '@mui/material/styles';
 import { Typography } from '@mui/material';
 import useMediaQuery from "@mui/material/useMediaQuery";
 
 
-export default function AboutUs(){
+export default function AboutUs({isFocus}){
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  const ref = useRef(null);
+
+  useEffect(() => {
+    if(isFocus)
+      ref.current.focus()
+  }, [isFocus])
   
   const Container = styled('div')({
     display: 'flex',
@@ -86,7 +92,7 @@ export default function AboutUs(){
 
 
   return (
-    <div className={styles.parentContainer}>
+    <div id="Intro" className={styles.parentContainer}>
     <Container sx={responsiveStyles}>
         <ImageContainer>
         <Image src={intro_img} alt="My Image" />
