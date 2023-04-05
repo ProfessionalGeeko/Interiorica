@@ -19,7 +19,7 @@
     background-color: rgb(255,255,255);
     height: 320px;
     color: rgb(30,32,37);
-    font-size: 1.1em;
+    font-size: 18px;
     line-height:1.875em; 
     font-family:  raleway, sans-serif;
     padding-left: 5%;
@@ -47,7 +47,7 @@
     height: 100%;
     object-fit: cover;
     overflow: hidden;
-
+    position: relative;
 }
 .card-header {
   color: aliceblue;
@@ -69,4 +69,13 @@
   border-radius: 0px;
   position: relative;
   margin-top: 10%;
+}
+
+@media (max-width: 552px) {
+    .Item{
+        font-size: 13px;
+    }
+    .Item-caption{
+        font-size: 13px;
+    }
 }
