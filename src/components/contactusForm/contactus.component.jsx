@@ -9,8 +9,10 @@ import {
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const ContactUsForm = () => {
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
   return (
     <Grid
       container
@@ -24,7 +26,7 @@ const ContactUsForm = () => {
         alignItems="center"
         textAlign="center"
         item
-        sx={{ backgroundColor: "rgb(30,32,37)" }}
+        sx={{ backgroundColor: `${prefersDarkMode ? 'rgb(30,32,37);': ''}` }}
         md={6}
         xs={12}
         justifyContent="center"
