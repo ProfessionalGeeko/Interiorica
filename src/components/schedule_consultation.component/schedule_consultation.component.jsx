@@ -15,6 +15,7 @@ export default function Projects({data, image}) {
     justifyContent: 'center',
     height: '100%',
       padding: '10rem',
+  color: `${prefersDarkMode ? 'rgb(0,0,0);': ''}`    
   });
   
   const StyledButton = styled(Button)({
