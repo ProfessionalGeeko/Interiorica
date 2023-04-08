@@ -77,21 +77,12 @@ const Navbar = (props) => {
                   }}
                 >
                   {pages.map((page) => (
-                      <Button
-                          key={page}
-                          href={`#${page}`}
-                          sx={{ my: 2, color: 'white', display: 'block' }}
-                      >
-                        {page}
-                      </Button>
+                      <div key={page} href={`#${page}`}>
+                        <MenuItem key={page}>
+                          <Typography textAlign="center">{page}</Typography>
+                        </MenuItem>
+                      </div>
                   ))}
-                  {/*{pages.map((page) => (*/}
-                  {/*    <div key={page} href={`#${page}`}>*/}
-                  {/*      <MenuItem key={page}>*/}
-                  {/*        <Typography textAlign="center">{page}</Typography>*/}
-                  {/*      </MenuItem>*/}
-                  {/*    </div>*/}
-                  {/*))}*/}
                 </Menu>
               </Box>
               <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>

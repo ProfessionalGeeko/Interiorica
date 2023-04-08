@@ -15,7 +15,8 @@ export default function Projects({data, image}) {
     justifyContent: 'center',
     height: '100%',
       padding: '10rem',
-  color: `${prefersDarkMode ? 'rgb(0,0,0);': ''}`    
+      color: `${prefersDarkMode ? 'rgb(0,0,0);': 'rgb(30,32,37);'}`,
+      backgroundColor: `${prefersDarkMode ? 'rgb(30,32,37);': 'rgb(256,256,256);'}`
   });
   
   const StyledButton = styled(Button)({
@@ -25,11 +26,11 @@ export default function Projects({data, image}) {
     color: `${prefersDarkMode ? 'rgb(256,256,256);': ''}`
   });
   return (
-    <QuestionContainer id="Services" maxWidth="sm">
-      <Typography variant="h4" align="center" gutterBottom >
+    <QuestionContainer id="Services" maxWidth="xl">
+      <Typography sx={{color: `${prefersDarkMode ? 'rgb(256,256,256);': ''}`}} variant="h4" align="center" gutterBottom >
       Ready to get started? 
       </Typography>
-      <Typography variant="body1" align="center" gutterBottom sx={{ mt: 1, mb:4 }}>
+      <Typography variant="body1" align="center" gutterBottom sx={{ mt: 1, mb:4, color: `${prefersDarkMode ? 'rgb(256,256,256);': ''}` }}>
       Contact us today to make your design dreams a reality.
       </Typography>
       <StyledButton variant="contained" className="Schedule_consult" >

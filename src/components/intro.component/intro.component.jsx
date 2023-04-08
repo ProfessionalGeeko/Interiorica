@@ -21,13 +21,13 @@ export default function AboutUs({isFocus}){
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
+    // justifyContent: 'center',
     justifyContent: 'flex-start',
-    maxWidth: '95%',
+    // maxWidth: '95%',
     margin: '0 auto',
     overflow: 'hidden',
-    paddingBottom:"10em",
-    marginTop:"10em",
+    // paddingBottom:"10em",
+    // marginTop:"10em",
     backgroundColor: `${prefersDarkMode ? 'rgb(30, 32, 37)': ''}`
   });
 
