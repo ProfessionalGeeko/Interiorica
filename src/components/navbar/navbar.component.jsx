@@ -38,7 +38,7 @@ const Navbar = (props) => {
           <IconButton size="large" edge="start" color="inherit" aria-label="logo">
             {/* <img src={logo} alt="Logo" /> */}
           </IconButton>
-          <Button href='#contact' variant="outlined">Contact Us</Button>
+          <Button href='tel:8591807632' variant="outlined">Contact Us</Button>
         </Stack>
         <Stack
           direction="row"
