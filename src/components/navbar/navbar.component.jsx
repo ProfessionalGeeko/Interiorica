@@ -71,7 +71,7 @@ const Navbar = (props) => {
                   onClick={handleOpenNavMenu}
                   color="inherit"
                 >
-                  <MenuIcon />
+                  <MenuIcon color="primary" />
                 </IconButton>
                 <Menu
                     disableScrollLock={true}
