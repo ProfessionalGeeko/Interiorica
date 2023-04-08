@@ -1,0 +1,53 @@
+.Reviews-wrapper {
+    height: 480px;
+    object-fit: cover;
+    position: relative;
+    text-align: center;
+    //width: 89%;
+    color: #f5f5f5;
+    //margin-left: 6%;
+    //margin-bottom: 3%;
+  
+    /* Set overflow to hidden */
+    overflow: hidden;
+  }
+  
+  .Reviews-header {
+    text-align: center;
+    line-height: 1.35em;
+    font-size: 40px;
+    padding-top: 13%;
+    left: 20px;
+    justify-self: start;
+  }
+  
+  .Reviews-subheader {
+    text-align: center;
+    line-height: 1.35em;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .Reviews-content {
+    text-align: center;
+    line-height: 1.35em;
+    font-size: 1em;
+    padding-top: 5%;
+    left: 20px;
+    justify-self: start;
+    max-width: 70%;
+    position: relative;
+    left: 18%;
+    padding: 30px;
+  
+    /* Adjust margins and padding */
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .Reviews-content p {
+    line-height: 1.875em;
+  }
+  
