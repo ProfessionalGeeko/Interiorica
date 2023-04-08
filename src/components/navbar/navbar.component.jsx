@@ -1,16 +1,19 @@
-import { Box, Divider, Stack, AppBar, Button, IconButton, Menu, MenuItem, Typography, Toolbar } from "@mui/material";
+import { Box, Divider, Stack, AppBar, Button, IconButton, Menu, MenuItem, Typography, Toolbar, Icon } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 // import logo from './Logo.jpg'
-// import logo from './Logo.png'
+import logo from './Logo.png'
+import whiteLogo from '../../assets/images/whiteLogo.png';
+import blackLogo from '../../assets/images/blackLogo.png';
 import {useEffect, useState} from "react";
-import Popover from '@mui/material/Popover';
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 
 const pages = ['Home', 'Projects', 'Services', 'Process', 'Workshop', 'About'];
 
 const Navbar = (props) => {
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
   const [anchorElNav, setAnchorElNav] = useState(null);
-  const [currentPage, setCurrentPage] = useState('Home');
+  const [currentPage, setCurrentPage] = useState('');
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -44,9 +47,12 @@ const Navbar = (props) => {
           paddingX={1}
           marginY={2}
         >
-          <IconButton size="large" edge="start" color="inherit" aria-label="logo">
-            {/* <img src={logo} alt="Logo" /> */}
+          <IconButton sx={{height: "6rem", width: "10rem"}} component="div" edge="start" color="inherit" aria-label="logo">
+             <img style={{objectFit: "contain", width: "100%", height: "100%"}} src={whiteLogo} alt="Logo" />
           </IconButton>
+          {/*<Typography component="p" textAlign="center" sx={{whiteSpace: "pre-wrap;"}}>*/}
+          {/*  SINGH<br/>INTERIOR*/}
+          {/*</Typography>*/}
           <Button href='tel:8591807632' variant="outlined">Contact Us</Button>
         </Stack>
         <Stack
