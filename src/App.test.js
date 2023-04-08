@@ -72,3 +72,45 @@ test('Database Connection Test', () => {
     );
     expect(getByText("Process")).toBeInTheDocument();
 });
+
+test('Database Connection Test', () => {
+    const { getByText } = render(
+        <App />
+    );
+    expect(getByText("Upcomming Events")).toBeInTheDocument();
+});
+
+test('Database Connection Test', () => {
+    const { getByText } = render(
+        <App />
+    );
+    expect(getByText("Upcomming Events")).toBeInTheDocument();
+});
+
+test('Database Connection Test', () => {
+    const { getByText } = render(
+        <App />
+    );
+    expect(getByText("Upcomming Events")).toBeInTheDocument();
+});
+
+test('Database Connection Test', () => {
+    const { getByText } = render(
+        <App />
+    );
+    expect(getByText("Upcomming Events")).toBeInTheDocument();
+});
+
+test('Services', () => {
+    const { getByText } = render(
+        <App />
+    );
+    expect(getByText("Services")).toBeInTheDocument();
+});
+
+test('Database Connection Test', () => {
+    const { getByText } = render(
+        <App />
+    );
+    expect(getByText("Process")).toBeInTheDocument();
+});
