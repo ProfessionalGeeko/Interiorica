@@ -2,20 +2,29 @@ import { Box, Divider, Stack, AppBar, Button, IconButton, Menu, MenuItem, Typogr
 import MenuIcon from '@mui/icons-material/Menu';
 // import logo from './Logo.jpg'
 // import logo from './Logo.png'
-import { useState } from "react";
+import {useEffect, useState} from "react";
+import Popover from '@mui/material/Popover';
+
 
 const pages = ['Home', 'Projects', 'Services', 'Process', 'Workshop', 'About'];
 
 const Navbar = (props) => {
   const [anchorElNav, setAnchorElNav] = useState(null);
+  const [currentPage, setCurrentPage] = useState('Home');
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
 
-  const handleCloseNavMenu = () => {
+  const handleCloseNavMenu = (page) => {
     setAnchorElNav(null);
   };
+
+  useEffect(() => {
+    if(!anchorElNav)
+      window.location.href = `#${currentPage}`
+  }, [anchorElNav])
+
 
   return (
     <Box
@@ -59,6 +68,7 @@ const Navbar = (props) => {
                   <MenuIcon />
                 </IconButton>
                 <Menu
+                    disableScrollLock={true}
                   id="menu-appbar"
                   anchorEl={anchorElNav}
                   anchorOrigin={{
@@ -71,17 +81,19 @@ const Navbar = (props) => {
                     horizontal: 'left',
                   }}
                   open={Boolean(anchorElNav)}
-                  onClose={handleCloseNavMenu}
+                  onClose={() => handleCloseNavMenu('Home')}
                   sx={{
                     display: { xs: 'block', md: 'none' },
                   }}
                 >
                   {pages.map((page) => (
-                      <div key={page} href={`#${page}`}>
-                        <MenuItem key={page}>
-                          <Typography textAlign="center">{page}</Typography>
-                        </MenuItem>
-                      </div>
+                      <MenuItem key={page} componenet="a" href={`#${page}`} onClick={() => {
+                        handleCloseNavMenu(page)
+                        setCurrentPage(page)
+                      }
+                      }>
+                        <Typography textAlign="center">{page}</Typography>
+                      </MenuItem>
                   ))}
                 </Menu>
               </Box>

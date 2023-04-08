@@ -19,6 +19,7 @@ function App() {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
   useEffect(() => {
     const bodyStyle = document.body.style;
+    bodyStyle.paddingRight = 0;
     bodyStyle.minWidth = '600px';
     bodyStyle.width = '100%';
     bodyStyle.height = '100%';
