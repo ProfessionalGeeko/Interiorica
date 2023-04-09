@@ -1,18 +1,45 @@
-import {
-  Grid,
-  Typography,
-  Stack,
-  Box,
-  TextField,
-  Button,
-} from "@mui/material";
+import { Grid, Typography, Stack, Box, TextField, Button,} from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "../../firebaseConfig";
+
+import { useFormik } from 'formik';
+
 const ContactUsForm = () => {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+
+  const saveContactUsRequest = async (formData) => {
+    try {
+      const docRef = await addDoc(collection(db, "contactUsRequests"), formData
+      );
+      console.log("Document written with ID: ", docRef.id);
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
+  }
+
+  const formik = useFormik({
+    initialValues: {
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
+    },
+    onSubmit: async values => {
+      try{
+        await saveContactUsRequest(values)
+      } catch (e) {
+        console.log(e.toString())
+      }finally {
+        formik.resetForm()
+      }
+    },
+  });
+
   return (
     <Grid
       container
@@ -66,7 +93,7 @@ const ContactUsForm = () => {
               md={6}
               xs={12}
             >
-               <TextField fullWidth id="standard-error" label="Name" variant="standard" margin="normal" />
+               <TextField name="name" onChange={formik.handleChange} value={formik.values.name} fullWidth id="standard-error" label="Name" variant="standard" margin="normal" />
             </Grid>
             <Grid
               item
@@ -74,25 +101,30 @@ const ContactUsForm = () => {
               xs={12}
             >
             <TextField
+                onChange={formik.handleChange} value={formik.values.email}
               fullWidth
               id="standard-error-helper-text"
               label="Email"
               variant="standard"
               margin="normal"
+                name="email"
             />
             </Grid>
           </Grid>
           <div>
             <TextField
               fullWidth
+              onChange={formik.handleChange} value={formik.values.subject}
               id="standard-error-helper-text"
               label="Subject"
               variant="standard"
               margin="normal"
+              name="subject"
             />
           </div>
           <div>
             <TextField
+                onChange={formik.handleChange} value={formik.values.message}
               id="standard-multiline-static"
               fullWidth
               label="Message"
@@ -101,10 +133,11 @@ const ContactUsForm = () => {
               rows={4}
               variant="standard"
               margin="normal"
+              name="message"
             />
           </div>
           <div>
-            <Button sx={{marginY: 2}} variant="contained">Submit</Button>
+            <Button onClick={formik.handleSubmit} sx={{marginY: 2}} variant="contained">Submit</Button>
           </div>
         </Box>
       </Grid>
