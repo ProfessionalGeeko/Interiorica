@@ -2,7 +2,6 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import React, { useState } from 'react';
 import FixedSizeImage from '../image_size.component';
-import  "./project_details.styles.scss";
 
 export default function MyVerticallyCenteredModal(props) {
     const images = [
