@@ -1,18 +1,53 @@
-import {
-  Grid,
-  Typography,
-  Stack,
-  Box,
-  TextField,
-  Button,
-} from "@mui/material";
+import { Grid, Typography, Stack, Box, TextField, Button,} from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "../../firebaseConfig";
+
+import { useFormik } from 'formik';
+import {ContactUsSchema} from "../../validationSchema/contactUsValidationSchema";
+
+import BasicModal from "../modal.component";
+import {useState} from "react";
+
 const ContactUsForm = () => {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  const saveContactUsRequest = async (formData) => {
+    try {
+      const docRef = await addDoc(collection(db, "contactUsRequests"), formData);
+    } catch (e) {
+      alert("Something went wrong! Please try again")
+    }
+  }
+
+  const formik = useFormik({
+    initialValues: {
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
+    },
+    validationSchema: ContactUsSchema,
+    onSubmit: async values => {
+      console.log(values);
+      try{
+        await saveContactUsRequest(values)
+        handleOpen();
+      } catch (e) {
+        console.log(e.toString())
+      }finally {
+        formik.resetForm()
+      }
+    },
+  });
+
   return (
     <Grid
       container
@@ -51,11 +86,13 @@ const ContactUsForm = () => {
           <InstagramIcon />
           <YouTubeIcon />
         </Stack>
+        <BasicModal title={'Thank You!'} description={"We have received your request, our support members will soon contact you!"} open={open} handleOpen={handleOpen} handleClose={handleClose} />
         <Box
           component="form"
           marginY={4}
           noValidate
           autoComplete="off"
+          onSubmit={formik.handleSubmit}
         >
           <Grid
             container
@@ -66,7 +103,7 @@ const ContactUsForm = () => {
               md={6}
               xs={12}
             >
-               <TextField fullWidth id="standard-error" label="Name" variant="standard" margin="normal" />
+               <TextField name="name" helperText={formik.touched.name && formik.errors.name}  error={formik.errors.name && formik.touched.name} onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.name} fullWidth id="standard-error" label="Name" variant="standard" margin="normal" />
             </Grid>
             <Grid
               item
@@ -74,25 +111,33 @@ const ContactUsForm = () => {
               xs={12}
             >
             <TextField
+                helperText={formik.touched.email && formik.errors.email}
+                onChange={formik.handleChange} value={formik.values.email} onBlur={formik.handleBlur} error={formik.errors.email && formik.touched.email}
               fullWidth
               id="standard-error-helper-text"
               label="Email"
               variant="standard"
               margin="normal"
+                name="email"
             />
             </Grid>
           </Grid>
           <div>
             <TextField
+                helperText={formik.touched.subject && formik.errors.subject}
               fullWidth
+              onChange={formik.handleChange} value={formik.values.subject} onBlur={formik.handleBlur} error={formik.errors.subject && formik.touched.subject}
               id="standard-error-helper-text"
               label="Subject"
               variant="standard"
               margin="normal"
+              name="subject"
             />
           </div>
           <div>
             <TextField
+                helperText={formik.touched.message && formik.errors.message}
+                onChange={formik.handleChange} value={formik.values.message} onBlur={formik.handleBlur} error={formik.errors.message && formik.touched.message}
               id="standard-multiline-static"
               fullWidth
               label="Message"
@@ -101,10 +146,11 @@ const ContactUsForm = () => {
               rows={4}
               variant="standard"
               margin="normal"
+              name="message"
             />
           </div>
           <div>
-            <Button sx={{marginY: 2}} variant="contained">Submit</Button>
+            <Button onClick={formik.handleSubmit} sx={{marginY: 2}} variant="contained">Submit</Button>
           </div>
         </Box>
       </Grid>
