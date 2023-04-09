@@ -8,17 +8,22 @@ import { addDoc, collection } from "firebase/firestore";
 import { db } from "../../firebaseConfig";
 
 import { useFormik } from 'formik';
+import {ContactUsSchema} from "../../validationSchema/contactUsValidationSchema";
+
+import BasicModal from "../modal.component";
+import {useState} from "react";
 
 const ContactUsForm = () => {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   const saveContactUsRequest = async (formData) => {
     try {
-      const docRef = await addDoc(collection(db, "contactUsRequests"), formData
-      );
-      console.log("Document written with ID: ", docRef.id);
+      const docRef = await addDoc(collection(db, "contactUsRequests"), formData);
     } catch (e) {
-      console.error("Error adding document: ", e);
+      alert("Something went wrong! Please try again")
     }
   }
 
@@ -29,9 +34,12 @@ const ContactUsForm = () => {
       subject: '',
       message: ''
     },
+    validationSchema: ContactUsSchema,
     onSubmit: async values => {
+      console.log(values);
       try{
         await saveContactUsRequest(values)
+        handleOpen();
       } catch (e) {
         console.log(e.toString())
       }finally {
@@ -78,11 +86,13 @@ const ContactUsForm = () => {
           <InstagramIcon />
           <YouTubeIcon />
         </Stack>
+        <BasicModal title={'Thank You!'} description={"We have received your request, our support members will soon contact you!"} open={open} handleOpen={handleOpen} handleClose={handleClose} />
         <Box
           component="form"
           marginY={4}
           noValidate
           autoComplete="off"
+          onSubmit={formik.handleSubmit}
         >
           <Grid
             container
@@ -93,7 +103,7 @@ const ContactUsForm = () => {
               md={6}
               xs={12}
             >
-               <TextField name="name" onChange={formik.handleChange} value={formik.values.name} fullWidth id="standard-error" label="Name" variant="standard" margin="normal" />
+               <TextField name="name" helperText={formik.touched.name && formik.errors.name}  error={formik.errors.name && formik.touched.name} onBlur={formik.handleBlur} onChange={formik.handleChange} value={formik.values.name} fullWidth id="standard-error" label="Name" variant="standard" margin="normal" />
             </Grid>
             <Grid
               item
@@ -101,7 +111,8 @@ const ContactUsForm = () => {
               xs={12}
             >
             <TextField
-                onChange={formik.handleChange} value={formik.values.email}
+                helperText={formik.touched.email && formik.errors.email}
+                onChange={formik.handleChange} value={formik.values.email} onBlur={formik.handleBlur} error={formik.errors.email && formik.touched.email}
               fullWidth
               id="standard-error-helper-text"
               label="Email"
@@ -113,8 +124,9 @@ const ContactUsForm = () => {
           </Grid>
           <div>
             <TextField
+                helperText={formik.touched.subject && formik.errors.subject}
               fullWidth
-              onChange={formik.handleChange} value={formik.values.subject}
+              onChange={formik.handleChange} value={formik.values.subject} onBlur={formik.handleBlur} error={formik.errors.subject && formik.touched.subject}
               id="standard-error-helper-text"
               label="Subject"
               variant="standard"
@@ -124,7 +136,8 @@ const ContactUsForm = () => {
           </div>
           <div>
             <TextField
-                onChange={formik.handleChange} value={formik.values.message}
+                helperText={formik.touched.message && formik.errors.message}
+                onChange={formik.handleChange} value={formik.values.message} onBlur={formik.handleBlur} error={formik.errors.message && formik.touched.message}
               id="standard-multiline-static"
               fullWidth
               label="Message"
