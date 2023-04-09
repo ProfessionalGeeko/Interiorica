@@ -13,6 +13,8 @@ import {ContactUsSchema} from "../../validationSchema/contactUsValidationSchema"
 import BasicModal from "../modal.component";
 import {useState} from "react";
 
+import axios from "axios";
+
 const ContactUsForm = () => {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
   const [open, setOpen] = useState(false);
@@ -36,10 +38,10 @@ const ContactUsForm = () => {
     },
     validationSchema: ContactUsSchema,
     onSubmit: async values => {
-      console.log(values);
       try{
         await saveContactUsRequest(values)
         handleOpen();
+        await axios.post('https://interiorica-backend.onrender.com/sendEmail', values);
       } catch (e) {
         console.log(e.toString())
       }finally {
