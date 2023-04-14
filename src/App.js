@@ -31,6 +31,14 @@ function App() {
     () =>
       createTheme({
         palette: {
+            customButtonColor: {
+                main: '#F56D91',
+                contrastText: "#FFF"
+            },
+            customButtonColorSecondary: {
+                main: '#8D8DAA',
+                contrastText: '#FFF',
+            },
           mode: prefersDarkMode ? 'dark' : 'light',
           fontFamily: [
             '-apple-system',

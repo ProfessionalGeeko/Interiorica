@@ -33,7 +33,7 @@ export default function Projects({data, image}) {
       <Typography variant="body1" align="center" gutterBottom sx={{ mt: 1, mb:4, color: `${prefersDarkMode ? 'rgb(256,256,256);': ''}` }}>
       Contact us today to make your design dreams a reality.
       </Typography>
-      <StyledButton href="tel:8591807632" variant="contained" className="Schedule_consult" >
+      <StyledButton color="customButtonColorSecondary" href="tel:8591807632" variant="contained" className="Schedule_consult" >
         Schedule a consultation
       </StyledButton>
     </QuestionContainer>
