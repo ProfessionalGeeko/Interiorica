@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Grid,IconButton } from '@mui/material';
+import { Grid, IconButton, useMediaQuery} from '@mui/material';
 import FixedSizeImage from './image_size.component';
 import { Close } from '@mui/icons-material';
 
@@ -7,6 +7,7 @@ export default function ImageGrid({ images }) {
   const [selectedImage, setSelectedImage] = useState(null);
   const [index, setIndex] = useState(null);
   const [is_selected, setFlag] = useState(false);
+  const isSmallScreen = useMediaQuery('(max-width:600px)');
 
   const handleImageClick = (index) => {
     setSelectedImage(images[index]);
@@ -30,7 +31,7 @@ export default function ImageGrid({ images }) {
                 onClick={() => handleImageClick(index)}
                 style={{ cursor: 'pointer',objectFit: 'cover'  }}
                 width="200px"
-                height="300px"
+                height={isSmallScreen ? 'auto' : '300px'}
               />
             </Grid>
           ))}
@@ -45,13 +46,13 @@ export default function ImageGrid({ images }) {
                   top: '0',
                   right: '0',
                   zIndex: 1,
-                  backgroundColor: 'white',
-                  borderRadius: '50%',
+                  backgroundColor: 'transparent',
+                  borderRadius: '50%'
                 }}
               >
                 <Close />
               </IconButton>
-              <FixedSizeImage src={selectedImage} width="200px" height="400" />
+              <FixedSizeImage src={selectedImage} width="200px" height={isSmallScreen ? 'auto' : '400px'} />
             </div>
           </Grid>
         )}
