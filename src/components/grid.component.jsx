@@ -30,7 +30,7 @@ export default function ImageGrid({ images }) {
                 src={image}
                 onClick={() => handleImageClick(index)}
                 style={{ cursor: 'pointer',objectFit: 'cover'  }}
-                width="200px"
+                width="240px"
                 height={isSmallScreen ? 'auto' : '300px'}
               />
             </Grid>

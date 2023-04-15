@@ -3,6 +3,7 @@ import Modal from 'react-bootstrap/Modal';
 import React, { useState } from 'react';
 import FixedSizeImage from '../image_size.component';
 import ImageGrid from '../grid.component';
+import './project_details.styles.scss';
 
 export default function MyVerticallyCenteredModal(props) {
     const show_whole_image = false;
@@ -48,7 +49,7 @@ export default function MyVerticallyCenteredModal(props) {
           </div>
         </Modal.Title>
       </Modal.Header>
-      <Modal.Body>
+      <Modal.Body style={{height:'480px',overflowY:"scroll"}}>
         {show_whole_image && selectedImage &&  <FixedSizeImage src={selectedImage} width="200px" height="400" />}
         {!show_whole_image  && <ImageGrid images={images[tag]} />}
       </Modal.Body>
