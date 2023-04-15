@@ -19,7 +19,6 @@ export default function BasicModal(props) {
 
     return (
         <div>
-            {/*<Button onClick={props.handleOpen}>Open modal</Button>*/}
             <Modal
                 open={props.open}
                 onClose={props.handleClose}
