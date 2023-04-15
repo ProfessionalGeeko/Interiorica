@@ -31,7 +31,7 @@ const Navbar = (props) => {
 
   return (
     <Box
-      sx={{ flexGrow: 1, backgroundColor: "rgb(30,32,37)" }}
+      sx={{ flexGrow: 1, backgroundColor: `${prefersDarkMode ? 'rgb(30,32,37)' : '#F7F5F2'}` }}
       paddingX={8}
       paddingY={1}
     >
@@ -48,19 +48,19 @@ const Navbar = (props) => {
           marginY={2}
         >
           <IconButton sx={{height: "6rem", width: "10rem"}} component="div" edge="start" color="inherit" aria-label="logo">
-             <img style={{objectFit: "contain", width: "100%", height: "100%"}} src={whiteLogo} alt="Logo" />
+             <img style={{objectFit: "contain", width: "100%", height: "100%"}} src={prefersDarkMode ? whiteLogo : blackLogo} alt="Logo" />
           </IconButton>
           {/*<Typography component="p" textAlign="center" sx={{whiteSpace: "pre-wrap;"}}>*/}
           {/*  SINGH<br/>INTERIOR*/}
           {/*</Typography>*/}
-          <Button href='tel:8591807632' variant="outlined">Contact Us</Button>
+          <Button component="button" href='tel:8591807632' color="customButtonColor" variant="contained">Contact Us</Button>
         </Stack>
         <Stack
           direction="row"
           justifyContent="space-between"
           paddingX={1}
         >
-          <AppBar position="static" enableColorOnDark style={{backgroundImage: "none", backgroundColor: "rgb(30,32,37)"}} elevation={0}>
+          <AppBar position="static" enableColorOnDark style={{backgroundImage: "none", backgroundColor: `${prefersDarkMode ? 'rgb(30,32,37)' : '#F7F5F2'}`}} elevation={0}>
             <Toolbar disableGutters>
               <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                 <IconButton
@@ -108,7 +108,7 @@ const Navbar = (props) => {
                   <Button
                     key={page}
                     href={`#${page}`}
-                    sx={{ my: 2, color: 'white', display: 'block' }}
+                    sx={{ my: 2, color: `${prefersDarkMode ? 'white' : 'black'}`, display: 'block' }}
                   >
                     {page}
                   </Button>

@@ -10,11 +10,14 @@ import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 import galary_5 from "../../assets/images/Gallery_5.jpg";
 import { Button } from "@mui/material";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 export default function Reviews_content() {
   const [index, setIndex] = useState(0);
+    const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
 
-  const handleSelect = (selectedIndex, e) => {
+
+    const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
   };
 
@@ -27,7 +30,7 @@ export default function Reviews_content() {
   }));
 
   return (
-    <div id="Workshop" className="Reviews-section">
+    <div id="Workshop" style={{ backgroundColor: `${prefersDarkMode ? 'rgb(30,32,37)' : '#DFDFDE'}`}} className="Reviews-section">
       <div className="carousel-div">
         <Carousel activeIndex={index} onSelect={handleSelect}>
           <Carousel.Item>
@@ -86,12 +89,11 @@ export default function Reviews_content() {
           </Carousel.Item>
         </Carousel>
       </div>
-      
         <div className="card-div">
             <div className="card-header">
-                <p>Upcomming Events</p>
+                <p style={{color: `${prefersDarkMode ? 'white' : 'black'}`}} >Upcoming Projects</p>
             </div>
-            <Grid container spacing={2} style={{backgroundColor:"#1E2025"}}>
+            <Grid container spacing={2} style={{ backgroundColor: `${prefersDarkMode ? 'rgb(30,32,37)' : '#DFDFDE'}`}}>
                 <Grid item xs={6}>
                     <Item><CardComponent/></Item>
                 </Grid>
@@ -99,10 +101,10 @@ export default function Reviews_content() {
                     <Item><CardComponent/></Item>
                 </Grid>
             </Grid>
-            <Grid container spacing={2} style={{backgroundColor:"#1E2025",marginTop:"50px"}}>
+            <Grid container spacing={2} style={{backgroundColor:`${prefersDarkMode ? 'rgb(30,32,37)' : '#DFDFDE'}`,marginTop:"50px"}}>
             <Grid item xs={6} >
-                
-                    <Grid container spacing={1} style={{height:"400px",backgroundColor:"#1E2025"}} >
+
+                    <Grid container spacing={1} style={{height:"400px"}} >
                         <Grid item xs={6}>
                             <img src={review_bg} alt="review_img"></img>
                         </Grid>
@@ -116,13 +118,13 @@ export default function Reviews_content() {
                             <img src={review_bg} alt="review_img"></img>
                         </Grid>
                     </Grid>
-                
+
                 </Grid>
                 <Grid item xs={6} style={{height:"410px"}}  >
                 <img src={galary_5} width="contain" alt="review_img"></img>
                 </Grid>
             </Grid>
-            <Button variant="contained" size="medium"  style={{marginLeft:"40%"}} >
+            <Button variant="contained" size="medium" color="customButtonColorSecondary"  style={{marginLeft:"45%", marginTop: "10%"}} >
                 Load More
             </Button>
         </div>

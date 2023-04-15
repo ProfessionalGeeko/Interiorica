@@ -2,8 +2,10 @@ import React from 'react';
 import Button from '@mui/material/Button';
 import styles from './reviews.styles.scss';
 import review_bg from '../../assets/images/Reviews_background.webp';
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 export default function Reviews() {
+    const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
     return (
             // create a wrpapper with a background image
             <div id="Process" className='Reviews-wrapper' style={{backgroundImage: `url(${review_bg})`,backgroundRepeat:"no-repeat"}} >

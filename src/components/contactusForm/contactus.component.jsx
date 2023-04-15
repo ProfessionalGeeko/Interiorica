@@ -54,7 +54,7 @@ const ContactUsForm = () => {
     <Grid
       container
       id="contact"
-      sx={{ backgroundColor: "#D0C1BA" }}
+      sx={{ backgroundColor: `${prefersDarkMode ? 'rgb(30,32,37)' : '#DFDFDE'}`}}
       paddingY={6}
       paddingX={8}
     >
@@ -64,7 +64,7 @@ const ContactUsForm = () => {
         alignItems="center"
         textAlign="center"
         item
-        sx={{ backgroundColor: `${prefersDarkMode ? 'rgb(30,32,37);': ''}` }}
+        sx={{ backgroundColor: `${prefersDarkMode ? 'rgb(30,32,37);': '#F7F2F2'}` }}
         md={6}
         xs={12}
         justifyContent="center"
@@ -152,7 +152,7 @@ const ContactUsForm = () => {
             />
           </div>
           <div>
-            <Button onClick={formik.handleSubmit} sx={{marginY: 2}} variant="contained">Submit</Button>
+            <Button color="customButtonColor" onClick={formik.handleSubmit} sx={{marginY: 2}} variant="contained">Submit</Button>
           </div>
         </Box>
       </Grid>

@@ -12,7 +12,7 @@ test('Firebase Connection Test', () => {
 
 test('Contact Us Test', () => {
     const { getByText } = render(
-        <ContactusComponent/>
+        <App/>
     );
     expect(getByText("singhsinterior.info@gmail.com")).toBeInTheDocument();
 });

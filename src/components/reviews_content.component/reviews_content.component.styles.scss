@@ -1,13 +1,13 @@
 @import "~bootstrap/scss/bootstrap";
 .Reviews-section{
-    background-color: rgb(30,32,37);
+    //background-color: #DFDFDE;
     //margin-left: 6%;
     //margin-right: 5%;
     height: 2000px !important;
     position: relative;
 }
 .carousel-div{  
-    background-color: rgb(30,32,37);
+    background-color: #DFDFDE;
     width: 70%;
     position: absolute;
     left: 50%;
@@ -34,8 +34,7 @@
     left: 6% ;
 }
 .card-div{
-    background-color: rgb(30,32,37);
-    width: 65%;
+    width: 80%;
     position: absolute;
     left: 50%;
     top: 65%;
@@ -56,20 +55,20 @@
   margin-bottom: 5rem;
 }
 
-.card-div Button {
-  background-color: white;
-  color:black;
-  border-radius: 0px;
-  position: relative;
-  margin-top: 10%;
-}
-.card-div Button:hover {
-  background-color: rgb(53, 58, 69);
-  color:white;
-  border-radius: 0px;
-  position: relative;
-  margin-top: 10%;
-}
+//.card-div Button {
+//  background-color: white;
+//  color:black;
+//  border-radius: 0px;
+//  position: relative;
+//  margin-top: 10%;
+//}
+//.card-div Button:hover {
+//  background-color: rgb(53, 58, 69);
+//  color:white;
+//  border-radius: 0px;
+//  position: relative;
+//  margin-top: 10%;
+//}
 
 @media (max-width: 552px) {
     .Item{

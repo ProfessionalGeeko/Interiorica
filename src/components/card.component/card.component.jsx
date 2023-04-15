@@ -27,7 +27,7 @@ export default function CardComponent() {
         </CardContent>
       </CardActionArea>
       <CardActions>
-      <Button variant="contained" size="medium"  className='Workshop-details' style={{color:"#fff"}}>
+      <Button color="customButtonColorSecondary" variant="contained" size="medium">
         Details
        </Button>
       </CardActions>

@@ -106,7 +106,7 @@ export default function AboutUs({isFocus}){
         </Subtitle>
         <Content>
             <p className='desc'>At Interiorica  we design residential and commercial spaces that are comfortable, personal and interesting. Great interior design is great art, reflecting who you are in ways you never imagined. Our unique perspective, grounded in both art and architecture, reflects an artist’s eye toward color and materials and a strong sense of space and form. We are artists, we are designers, and we are here to make your space better than you could have ever imagined.</p>
-            <Button variant="contained" size="medium" style={{"marginTop":"60px"}}>Learn More</Button>
+            <Button variant="contained" color="customButtonColor" size="medium" style={{"marginTop":"60px"}}>Learn More</Button>
         </Content>
       </DescriptionContainer>      
     </Container>
