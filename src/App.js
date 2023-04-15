@@ -14,6 +14,7 @@ import project_1 from './assets/images/project_1.webp';
 import ScheduleConsultation from "./components/schedule_consultation.component/schedule_consultation.component";
 import Reviews from './components/reviews.component/reviews.component.component';
 import ReviewsContent from './components/reviews_content.component/reviews_content.component';
+import Sticky from './components/sticky.component.jsx';
 
 function App() {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
@@ -62,6 +63,7 @@ function App() {
       <ReviewsContent />
       <ContactUsForm />
       <CssBaseline />
+      <Sticky/>
     </ThemeProvider>
     
   );
