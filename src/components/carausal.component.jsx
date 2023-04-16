@@ -51,8 +51,8 @@ export default function Carousel({ images }) {
                   padding: '10px'
                 }}
               >
-                <Button variant="contained" color="primary" size="medium" onMouseOver={() => setHovered(true)} onClick={() => setModalShow(true)}>
-                  Read More
+                <Button variant="contained" color="customButtonColor" size="medium" onMouseOver={() => setHovered(true)} onClick={() => setModalShow(true)}>
+                  See More
                 </Button>
               </Box>
             )}

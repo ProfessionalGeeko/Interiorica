@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import FixedSizeImage from '../image_size.component';
 import ImageGrid from '../grid.component';
 import './project_details.styles.scss';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function MyVerticallyCenteredModal(props) {
     const show_whole_image = false;
@@ -37,7 +38,7 @@ export default function MyVerticallyCenteredModal(props) {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gridGap: '10px',marginBottom: '10px' }}>
               {tags.map((curr_tag) => (
                 <Button style={{
-                  backgroundColor: `${tag == curr_tag ? 'rgb(30,32,37)' : ''}`,
+                  backgroundColor: `${tag == curr_tag ? '#8D8DAA' : ''}`,
                   color: `${tag == curr_tag ? '#fff' : ''}`,
                   fontSize: '16px',
                   borderRadius: '4px',
@@ -54,7 +55,7 @@ export default function MyVerticallyCenteredModal(props) {
         {!show_whole_image  && <ImageGrid images={images[tag]} />}
       </Modal.Body>
       <Modal.Footer>
-        <Button style={{backgroundColor:'rgb(30,32,37)',padding: '10px 40px',borderColor:'rgb(30,32,37)'}}onClick={props.onHide}>Close</Button>
+        <Button style={{backgroundColor:'#8D8DAA',padding: '10px 40px',borderColor:'#8D8DAA'}}onClick={props.onHide}>Close</Button>
       </Modal.Footer>
     </Modal>
   );
