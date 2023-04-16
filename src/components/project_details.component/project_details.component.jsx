@@ -34,7 +34,7 @@ export default function MyVerticallyCenteredModal(props) {
     >
       <Modal.Header closeButton={false}>
         <Modal.Title id="contained-modal-title-vcenter">
-          <div  style={{ backgroundColor: '#fff', padding: '10px' }}>
+          <div  style={{ backgroundColor: '#fff' }}>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gridGap: '10px',marginBottom: '10px' }}>
               {tags.map((curr_tag) => (
                 <Button style={{
@@ -42,7 +42,7 @@ export default function MyVerticallyCenteredModal(props) {
                   color: `${tag == curr_tag ? '#fff' : ''}`,
                   fontSize: '16px',
                   borderRadius: '4px',
-                  padding: '10px 30px',
+                  padding: '10px 20px',
                 }} class="Headerbutton" variant="contained" onClick={() => handleImageClick(curr_tag)}>{curr_tag}</Button>
               )
               )}

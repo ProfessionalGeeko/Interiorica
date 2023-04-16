@@ -21,25 +21,25 @@ export default function ReviewCardContainer() {
 
     const youtubeCardList = [
         {
-            link: 'https://www.youtube.com/embed/7E3l7mZEUos',
+            link: 'https://www.youtube.com/embed/OtRWAI7eSFo',
             title: 'Lizard',
             description: 'Lizards are a widespread group of squamate reptiles, with over 6,000\n' +
                 'species, ranging across all continents except Antarctica'
         },
         {
-            link: 'https://www.youtube.com/embed/7E3l7mZEUos',
+            link: 'https://www.youtube.com/embed/OtRWAI7eSFo',
             title: 'Lizard',
             description: 'Lizards are a widespread group of squamate reptiles, with over 6,000\n' +
                 'species, ranging across all continents except Antarctica'
         },
         {
-            link: 'https://www.youtube.com/embed/7E3l7mZEUos',
+            link: 'https://www.youtube.com/embed/OtRWAI7eSFo',
             title: 'Lizard',
             description: 'Lizards are a widespread group of squamate reptiles, with over 6,000\n' +
                 'species, ranging across all continents except Antarctica'
         },
         {
-            link: 'https://www.youtube.com/embed/7E3l7mZEUos',
+            link: 'https://www.youtube.com/embed/OtRWAI7eSFo',
             title: 'Lizard',
             description: 'Lizards are a widespread group of squamate reptiles, with over 6,000\n' +
                 'species, ranging across all continents except Antarctica'
