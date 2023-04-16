@@ -16,6 +16,5 @@ export default function Reviews() {
                     <p>Our satisfied clients keep us alive and prospering. We are happy to be able to provide all of our clients with unparalleled services. We’re pleased to say that due to our efforts, our clients always come back to us for more. Read below to find out all the wonderful things our clients have to say about us. We are sure you will soon be convinced to give us a call.</p>
                 </div>
             </div>
-
     );
 }

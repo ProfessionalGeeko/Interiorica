@@ -130,7 +130,7 @@ const ContactUsForm = () => {
               fullWidth
               onChange={formik.handleChange} value={formik.values.subject} onBlur={formik.handleBlur} error={formik.errors.subject && formik.touched.subject}
               id="standard-error-helper-text"
-              label="Subject"
+              label="Contact Number"
               variant="standard"
               margin="normal"
               name="subject"
@@ -152,7 +152,7 @@ const ContactUsForm = () => {
             />
           </div>
           <div>
-            <Button color="customButtonColor" onClick={formik.handleSubmit} sx={{marginY: 2}} variant="contained">Submit</Button>
+            <Button color="customButtonColor" disabled={!(formik.isValid && formik.dirty)} onClick={formik.handleSubmit} sx={{marginY: 2}} variant="contained">Submit</Button>
           </div>
         </Box>
       </Grid>
