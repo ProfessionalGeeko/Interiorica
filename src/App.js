@@ -17,6 +17,7 @@ import ReviewsContent from './components/reviews_content.component/reviews_conte
 import Sticky from './components/sticky.component.jsx';
 import ReviewCard from "./components/review-card/review-card";
 import ReviewCardContainer from "./components/review-card/review-card-container";
+import CustomerReview from "./components/customer-review/CustomerReview";
 
 function App() {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
@@ -60,8 +61,8 @@ function App() {
       <Projects data={{"Header":"Residential Design","Sub_header":"The Little Touches that Make All the Difference","Content":"Sometimes the little things make all the difference. With our Pre-Construction Consultation services, we’ll be able to transform your space and set the mood. Whatever your interior design needs may be, our team of experts and architects are here to make sure you feel at home in the space you live or work in. Contact us today and get started."}} image={project_1}/>
       <Projects data={{"Header":"Residential Design","Sub_header":"The Little Touches that Make All the Difference","Content":"Sometimes the little things make all the difference. With our Pre-Construction Consultation services, we’ll be able to transform your space and set the mood. Whatever your interior design needs may be, our team of experts and architects are here to make sure you feel at home in the space you live or work in. Contact us today and get started."}} image={project_1}/>
         <ReviewCardContainer/>
-        {/*<Projects data={{"Header":"Residential Design","Sub_header":"The Little Touches that Make All the Difference","Content":"Sometimes the little things make all the difference. With our Pre-Construction Consultation services, we’ll be able to transform your space and set the mood. Whatever your interior design needs may be, our team of experts and architects are here to make sure you feel at home in the space you live or work in. Contact us today and get started."}} image={project_1}/>*/}
       <ScheduleConsultation />
+        {/*<CustomerReview/>*/}
       <Reviews />
       <ReviewsContent />
         <ContactUsForm />
