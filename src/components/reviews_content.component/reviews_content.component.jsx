@@ -70,9 +70,9 @@ export default function Reviews_content() {
                 <img src={galary_5} width="contain" alt="review_img"></img>
                 </Grid>
             </Grid>
-            <Button variant="contained" size="medium" color="customButtonColorSecondary"  style={{marginLeft:"45%", marginTop: "10%"}} >
-                Load More
-            </Button>
+            {/*<Button variant="contained" size="medium" color="customButtonColorSecondary"  style={{marginLeft:"45%", marginTop: "10%"}} >*/}
+            {/*    Load More*/}
+            {/*</Button>*/}
         </div>
     </div>
   );
