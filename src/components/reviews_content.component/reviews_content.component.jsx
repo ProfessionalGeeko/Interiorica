@@ -35,7 +35,7 @@ export default function Reviews_content() {
       <div className="carousel-div">
           <CustomerReview/>
       </div>
-        <div className="card-div">
+        <div id="Upcomming Projects" className="card-div">
             <div className="card-header">
                 <p style={{color: `${prefersDarkMode ? 'white' : 'black'}`}} >Upcoming Projects</p>
             </div>

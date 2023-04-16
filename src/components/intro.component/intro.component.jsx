@@ -41,7 +41,7 @@ export default function AboutUs({isFocus}){
   });
 
   const Image = styled('img')({
-    height: '630px',
+    height: '500px',
     objectFit: 'contain'
   });
 
