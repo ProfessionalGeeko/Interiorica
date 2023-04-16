@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Grid, IconButton, useMediaQuery} from '@mui/material';
+import { Grid, Button, useMediaQuery} from '@mui/material';
 import FixedSizeImage from './image_size.component';
-import { Close } from '@mui/icons-material';
+import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 
 export default function ImageGrid({ images }) {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -39,19 +39,21 @@ export default function ImageGrid({ images }) {
         {is_selected && (
           <Grid item xs={12} sm={12} md={12}>
             <div style={{ position: 'relative' }}>
-              <IconButton
+              <Button
                 onClick={() => handleCloseClick()}
                 style={{
                   position: 'absolute',
                   top: '0',
                   right: '0',
                   zIndex: 1,
-                  backgroundColor: 'transparent',
-                  borderRadius: '50%'
+                  backgroundColor:'transparent',
+                  borderColor:"black",  
+                  borderRadius: '100%',
+                  borderColor:"black"
                 }}
               >
-                <Close />
-              </IconButton>
+                <CloseOutlinedIcon  style={{color:"#FFF",backgroundColor:"#8D8DAA",borderRadius:"100px",height:"30px","width":"30px",borderColor:"black"}}/>
+              </Button>
               <FixedSizeImage src={selectedImage} width="200px" height={isSmallScreen ? 'auto' : '400px'} />
             </div>
           </Grid>

@@ -89,7 +89,7 @@ export default function Projects({data, image}){
   };
 
   return (
-    <Container id="Projects" sx={responsiveStyles}>
+    <Container id="Designs" sx={responsiveStyles}>
       <DescriptionContainer>
         <Title >
             {data.Header}

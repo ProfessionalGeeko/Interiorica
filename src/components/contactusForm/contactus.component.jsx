@@ -51,9 +51,9 @@ const ContactUsForm = () => {
   });
 
   return (
-    <Grid
+    <Grid 
       container
-      id="contact"
+      id="contactus"
       sx={{ backgroundColor: `${prefersDarkMode ? 'rgb(30,32,37)' : '#DFDFDE'}`}}
       paddingY={6}
       paddingX={8}

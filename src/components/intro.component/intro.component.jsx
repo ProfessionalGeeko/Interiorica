@@ -34,14 +34,14 @@ export default function AboutUs({isFocus}){
 
   const ImageContainer = styled('div')({
   flex: '1 1 300px',
-  height: '100%',
+  height: '700px',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
   });
 
   const Image = styled('img')({
-    height: '700px',
+    height: '500px',
     objectFit: 'contain'
   });
 

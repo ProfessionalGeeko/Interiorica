@@ -15,8 +15,8 @@ export default function Sticky() {
             width: '70px',
             height: '70px',
             backgroundColor: 'transparent',
-            color:"#0d6efd",
-            borderColor:"#0d6efd",
+            color:"#F56D91",
+            borderColor:"#F56D91",
           }}
         >
           <AddIcCallIcon style={{width:"40px",height:"40px"}} />

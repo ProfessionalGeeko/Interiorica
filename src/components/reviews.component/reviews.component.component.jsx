@@ -8,7 +8,7 @@ export default function Reviews() {
     const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
     return (
             // create a wrpapper with a background image
-            <div id="Process" className='Reviews-wrapper' style={{backgroundImage: `url(${review_bg})`,backgroundRepeat:"no-repeat"}} >
+            <div id="Reviews" className='Reviews-wrapper' style={{backgroundImage: `url(${review_bg})`,backgroundRepeat:"no-repeat"}} >
                 
                 <div className='Reviews-header'>Real Life Reviews</div>
                 <div className='Reviews-sub-header'><h5>The Word on the Street</h5></div>

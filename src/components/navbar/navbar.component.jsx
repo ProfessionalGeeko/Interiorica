@@ -8,7 +8,7 @@ import {useEffect, useState} from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
 
-const pages = ['Home', 'Projects', 'Services', 'Process', 'Workshop', 'About'];
+const pages = ['Home', 'About', 'Designs', 'Projects', 'Reviews', 'Upcomming Projects' ];
 
 const Navbar = (props) => {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
@@ -53,7 +53,7 @@ const Navbar = (props) => {
           {/*<Typography component="p" textAlign="center" sx={{whiteSpace: "pre-wrap;"}}>*/}
           {/*  SINGH<br/>INTERIOR*/}
           {/*</Typography>*/}
-          <Button component="button" href='tel:8591807632' color="customButtonColor" variant="contained">Contact Us</Button>
+          <Button component="button" href='#contactus' color="customButtonColor" variant="contained">Contact Us</Button>
         </Stack>
         <Stack
           direction="row"
