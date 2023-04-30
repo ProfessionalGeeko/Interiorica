@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Grid, Button, useMediaQuery} from '@mui/material';
-import FixedSizeImage from './image_size.component';
+import FixedSizeImage from '../image.component/image_size.component';
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 
 export default function ImageGrid({ images }) {

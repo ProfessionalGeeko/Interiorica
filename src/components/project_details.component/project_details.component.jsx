@@ -1,8 +1,8 @@
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import React, { useState } from 'react';
-import FixedSizeImage from '../image_size.component';
-import ImageGrid from '../grid.component';
+import FixedSizeImage from '../image.component/image_size.component';
+import ImageGrid from '../grid.component/grid.component';
 import './project_details.styles.scss';
 import "bootstrap/dist/css/bootstrap.min.css";
 

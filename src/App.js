@@ -14,7 +14,7 @@ import project_1 from './assets/images/project_1.webp';
 import ScheduleConsultation from "./components/schedule_consultation.component/schedule_consultation.component";
 import Reviews from './components/reviews.component/reviews.component.component';
 import ReviewsContent from './components/reviews_content.component/reviews_content.component';
-import Sticky from './components/sticky.component.jsx';
+import Sticky from './components/sticky.component/sticky.component.jsx';
 import ReviewCard from "./components/review-card/review-card";
 import ReviewCardContainer from "./components/review-card/review-card-container";
 import CustomerReview from "./components/customer-review/CustomerReview";

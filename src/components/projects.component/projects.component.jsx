@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles';
 import { Typography } from '@mui/material';
 import useMediaQuery from "@mui/material/useMediaQuery";
 import MyVerticallyCenteredModal from '../project_details.component/project_details.component.jsx';
-import Carousel from '../carausal.component.jsx'
+import Carousel from '../carousel.component/carausal.component.jsx'
 
 export default function Projects({data, image}){
   const images = [

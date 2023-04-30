@@ -10,7 +10,7 @@ import { db } from "../../firebaseConfig";
 import { useFormik } from 'formik';
 import {ContactUsSchema} from "../../validationSchema/contactUsValidationSchema";
 
-import BasicModal from "../modal.component";
+import BasicModal from "../modal.component/modal.component";
 import {useState} from "react";
 
 import axios from "axios";

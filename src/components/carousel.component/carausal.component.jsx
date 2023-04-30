@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Button } from '@mui/material';
-import MyVerticallyCenteredModal from './project_details.component/project_details.component.jsx';
+import MyVerticallyCenteredModal from '../project_details.component/project_details.component.jsx';
 
 const images = [
   'https://picsum.photos/600/400?random=1',
