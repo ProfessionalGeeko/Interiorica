@@ -8,6 +8,7 @@ import Button from '@mui/material/Button';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const theme = createTheme({
     palette: {
@@ -38,6 +39,8 @@ export default function DesignGenerator() {
   const [files, setFiles] = useState([]);
   const [selectedTheme, setSelectedTheme] = useState('');
   const [selectedRoomType, setselectedRoomType] = useState('');
+
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
 
   const handleThemeChange = (event) => {
     setSelectedTheme(event.target.value);
@@ -77,11 +80,11 @@ export default function DesignGenerator() {
 
   return (
     <div>
-      <p style={{marginTop:"5%",textAlign:"center",fontSize:"30px"}}><b>Generate your own design</b></p>
+      <p style={{marginTop:"5%",textAlign:"center",fontSize:"30px"}}><b style={{color:`${prefersDarkMode ? 'rgb(30, 32, 37)': ''}`}}>Generate your own design</b></p>
       <div style={{marginTop:"4%"}}>
         <div>
             <ul style={{width:'100%',textAlign:'center'}}>
-                <li style={{listStyle:'None',marginBottom:'2%'}}><p><b>1. Choose your room theme</b></p><br></br>
+                <li style={{listStyle:'None',marginBottom:'2%'}}><p><b style={{color:`${prefersDarkMode ? 'rgb(30, 32, 37)': ''}`}}>1. Choose your room theme</b></p><br></br>
                     <ThemeProvider theme={theme}>
                         <Select
                             value={selectedTheme}
@@ -100,7 +103,7 @@ export default function DesignGenerator() {
                     </ThemeProvider>
                 </li>
                 <li style={{listStyle:'None'}}>
-                    <p><b>2. Choose your room type</b></p>
+                    <p><b style={{color:`${prefersDarkMode ? 'rgb(30, 32, 37)': ''}`}}>2. Choose your room type</b></p>
                     <ThemeProvider theme={theme}>
                         <Select
                             value={selectedRoomType}
@@ -124,12 +127,12 @@ export default function DesignGenerator() {
             </ul>
         </div>
       </div>
-      <p style={{textAlign:'center',marginTop:"3%"}}><b>3. Upload a picture of your room</b></p>
+      <p style={{textAlign:'center',marginTop:"3%"}}><b style={{color:`${prefersDarkMode ? 'rgb(30, 32, 37)': ''}`}}>3. Upload a picture of your room</b></p>
       <div style={styles.root}>
         <Card style={styles.card}>
             {processedImage && <CardContent>
                 <Typography variant="h6" gutterBottom style={{textAlign:'center'}}>
-                    Original Image
+                    Original Design
                 </Typography>
                 </CardContent>}
           <CardContent>
@@ -164,7 +167,7 @@ export default function DesignGenerator() {
         <Card style={styles.card}>
             {processedImage && <CardContent>
                 <Typography variant="h6" gutterBottom style={{textAlign:'center'}}>
-                    Generated Image
+                    Generated Design
                 </Typography>
                 </CardContent>}
           <CardContent>
