@@ -11,6 +11,9 @@ import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 import {Grid} from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import {useState, useEffect} from "react";
+import useHttp from "../../hooks/useHttp";
+import CircularProgress from "@mui/material/CircularProgress";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 

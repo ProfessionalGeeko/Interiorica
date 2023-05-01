@@ -14,13 +14,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import CustomerReview from "../customer-review/CustomerReview";
 
 export default function Reviews_content() {
-  const [index, setIndex] = useState(0);
     const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
-
-
-    const handleSelect = (selectedIndex, e) => {
-    setIndex(selectedIndex);
-  };
 
   const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -70,9 +64,6 @@ export default function Reviews_content() {
                 <img src={galary_5} width="contain" alt="review_img"></img>
                 </Grid>
             </Grid>
-            {/*<Button variant="contained" size="medium" color="customButtonColorSecondary"  style={{marginLeft:"45%", marginTop: "10%"}} >*/}
-            {/*    Load More*/}
-            {/*</Button>*/}
         </div>
     </div>
   );

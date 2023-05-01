@@ -15,6 +15,8 @@ import {useState} from "react";
 
 import axios from "axios";
 
+import { contactUsTitle, contactUsDescription, contactUs, contactUsEmail, contactUsAddress } from "../../constants";
+
 const ContactUsForm = () => {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
   const [open, setOpen] = useState(false);
@@ -71,17 +73,15 @@ const ContactUsForm = () => {
         paddingX={2}
         paddingY={6}
       >
-        <Typography variant="h4">Contact Us</Typography>
+        <Typography variant="h4">{contactUsTitle}</Typography>
         <Typography variant="body2" component="div" marginY={2}>
-          The way to incredible spaces that reflect your personality are only a
-          call away. Interested in working with us? Get in touch today.
+          {contactUsDescription}
         </Typography>
         <Typography variant="body2" component="div" marginY={2}>
-          A/Shop No 14, Krishna Kunj Building, 150 feet Road, Bhayandar (W),
-          Maharashtra 401101.
+          {contactUsAddress}
         </Typography>
         <Typography variant="body2" component="div" marginY={2}>
-          singhsinterior.info@gmail.com
+          {contactUsEmail}
         </Typography>
         <Stack direction="row" spacing={2}>
           <FacebookIcon />

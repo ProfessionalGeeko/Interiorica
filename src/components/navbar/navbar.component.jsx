@@ -48,7 +48,7 @@ const Navbar = (props) => {
           marginY={2}
         >
           <IconButton sx={{height: "6rem", width: "10rem"}} component="div" edge="start" color="inherit" aria-label="logo">
-             <img style={{objectFit: "contain", width: "100%", height: "100%"}} src={prefersDarkMode ? whiteLogo : blackLogo} alt="Logo" />
+             <img style={{objectFit: "contain", width: "100%", height: "100%"}} src={prefersDarkMode ? logo : logo} alt="Logo" />
           </IconButton>
           {/*<Typography component="p" textAlign="center" sx={{whiteSpace: "pre-wrap;"}}>*/}
           {/*  SINGH<br/>INTERIOR*/}

@@ -3,10 +3,11 @@ import { Box, Button, Container, Typography } from '@mui/material';
 import { styled } from '@mui/system';
 import  './schedule_consultation.styles.scss';
 import useMediaQuery from "@mui/material/useMediaQuery";
+import { consultationTitle, consultationSubtitle } from '../../constants';
 
 
 
-export default function Projects({data, image}) {
+export default function ScheduleConsultation({data, image}) {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
   const QuestionContainer = styled(Container)({
     display: 'flex',
@@ -28,10 +29,10 @@ export default function Projects({data, image}) {
   return (
     <QuestionContainer id="Services" maxWidth="xl">
       <Typography sx={{color: `${prefersDarkMode ? 'rgb(256,256,256);': ''}`}} variant="h4" align="center" gutterBottom >
-      Ready to get started? 
+        { consultationTitle }
       </Typography>
       <Typography variant="body1" align="center" gutterBottom sx={{ mt: 1, mb:4, color: `${prefersDarkMode ? 'rgb(256,256,256);': ''}` }}>
-      Contact us today to make your design dreams a reality.
+        { consultationSubtitle }
       </Typography>
       <StyledButton color="customButtonColorSecondary" href="tel:8591807632" variant="contained" className="Schedule_consult" >
         Schedule a consultation

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import './App.css';
 
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -15,10 +15,10 @@ import ScheduleConsultation from "./components/schedule_consultation.component/s
 import Reviews from './components/reviews.component/reviews.component.component';
 import ReviewsContent from './components/reviews_content.component/reviews_content.component';
 import Sticky from './components/sticky.component/sticky.component.jsx';
-import ReviewCard from "./components/review-card/review-card";
-import ReviewCardContainer from "./components/review-card/review-card-container";
-import CustomerReview from "./components/customer-review/CustomerReview";
+import YoutubeCardContainer from "./components/youtube-card/youtube-card-container";
 import {Divider} from "@mui/material";
+
+import Layout from './pages/Layout/layout';
 
 function App() {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
@@ -56,22 +56,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Navbar />
-      <Intro />
-        <Divider/>
-      <AboutUs />
-      <Projects data={{"Header":"Residential Design","Sub_header":"The Little Touches that Make All the Difference","Content":"Sometimes the little things make all the difference. With our Pre-Construction Consultation services, we’ll be able to transform your space and set the mood. Whatever your interior design needs may be, our team of experts and architects are here to make sure you feel at home in the space you live or work in. Contact us today and get started."}} image={project_1}/>
-      <Projects data={{"Header":"Residential Design","Sub_header":"The Little Touches that Make All the Difference","Content":"Sometimes the little things make all the difference. With our Pre-Construction Consultation services, we’ll be able to transform your space and set the mood. Whatever your interior design needs may be, our team of experts and architects are here to make sure you feel at home in the space you live or work in. Contact us today and get started."}} image={project_1}/>
-        <Divider/>
-        <ReviewCardContainer/>
-        <Divider/>
-      <ScheduleConsultation />
-        <Divider/>
-        {/*<CustomerReview/>*/}
-      <Reviews />
-        <Divider/>
-      <ReviewsContent />
-        <ContactUsForm />
+      <Layout/>
       <CssBaseline />
       <Sticky/>
     </ThemeProvider>

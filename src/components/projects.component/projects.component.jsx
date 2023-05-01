@@ -4,15 +4,9 @@ import { Typography } from '@mui/material';
 import useMediaQuery from "@mui/material/useMediaQuery";
 import MyVerticallyCenteredModal from '../project_details.component/project_details.component.jsx';
 import Carousel from '../carousel.component/carausal.component.jsx'
+import CircularProgress from '@mui/material/CircularProgress';
 
-export default function Projects({data, image}){
-  const images = [
-    'https://picsum.photos/600/400?random=1',
-    'https://picsum.photos/600/400?random=2',
-    'https://picsum.photos/600/400?random=3',
-    'https://picsum.photos/600/400?random=4',
-    'https://picsum.photos/600/400?random=5',
-  ];
+export default function Projects({data, designImages, tagImages, isLoading}){
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
   const Container = styled('div')({
     display: 'flex',
@@ -105,8 +99,7 @@ export default function Projects({data, image}){
         
       </DescriptionContainer>
       <ImageContainer>
-        {/* <Image src={image}  alt="Project" onClick={() => setModalShow(true)} style={{ cursor: 'pointer' }} /> */}
-        <Carousel images={images}  />
+        {isLoading ? <CircularProgress color="secondary" /> :<Carousel images={designImages} tagImages={tagImages} tags={Object.keys(tagImages)}  />}
       </ImageContainer>
     </Container>
   );

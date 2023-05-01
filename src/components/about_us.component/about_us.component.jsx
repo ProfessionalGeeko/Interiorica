@@ -1,20 +1,35 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect, useState} from 'react';
 import about_us from '../../assets/images/about_us.webp';
 import Button from '@mui/material/Button';
 import styles from './about_us.styles.scss';
+import CircularProgress from '@mui/material/CircularProgress';
 import useMediaQuery from "@mui/material/useMediaQuery";
+import useHttp from "../../hooks/useHttp";
+import { aboutUsTitle, aboutUsDescriptionOne, aboutUsDescriptionTwo } from '../../constants';
 
-export default function AboutUs({isFocus}) {
+export default function AboutUs() {
     const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+    const { isLoading, sendRequest } = useHttp();
+    const [ aboutUsImage, setAboutUsImage ] = useState(null);
+
+    const handleAboutUsData = (data) => {
+        setAboutUsImage(data.aboutUsMiddle)
+    }
+
+    useEffect(() => {
+        sendRequest({method: 'GET', url: '/get-data?documentName=aboutUs'}, handleAboutUsData)
+    }, [sendRequest])
+
+
     return (
             <div id="About" style={{ backgroundColor: `${prefersDarkMode ? 'rgb(30,32,37)' : '#DFDFDE'}`}} className='wrapper'>
                 <div className='Image-container'>
-                    <img src={about_us} alt="about_us" width="100%" />
+                    {isLoading ? <CircularProgress color="secondary" /> : <img src={aboutUsImage} alt="about_us" width="100%" />}
                 </div>
                 <div className='Description'>
-                    <h1 >About Us</h1>
-                    <p style={{"marginTop":"65px"}}>Bring your vision to life with Interiorica. Since 2019, our professional, creative team has been designing the spaces that are most important to you. From our initial strategy shopping session to laying down the rugs on your new floors, we’ll lead the way with expert guidance.</p>
-                    <p style={{"marginTop":"60px"}}>No matter the size of the project, the goal is always the same: to make your personal style shine. We provide new inspiration and ideas, while incorporating elements of your liking into every concept we present. Schedule a consultation with us today and feel the Interiorica difference.</p>
+                    <h1>{aboutUsTitle}</h1>
+                    <p style={{"marginTop":"65px"}}>{aboutUsDescriptionOne}</p>
+                    <p style={{"marginTop":"60px"}}>{aboutUsDescriptionTwo}</p>
                     <Button variant="contained" color="customButtonColor" size="medium" style={{"marginTop":"60px"}}>Learn More</Button>
                 </div>
             </div>

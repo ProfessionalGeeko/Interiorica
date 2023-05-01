@@ -2,20 +2,27 @@
 import intro_img from '../../assets/images/intro_img.jpg';
 import Button from '@mui/material/Button';
 import  styles from './intro.styles.scss';
-import React, {useEffect, useRef} from 'react';
+import React, { useEffect, useState } from 'react';
 import { styled } from '@mui/material/styles';
 import { Typography } from '@mui/material';
+import CircularProgress from '@mui/material/CircularProgress';
 import useMediaQuery from "@mui/material/useMediaQuery";
+import useHttp from "../../hooks/useHttp";
+import { introTitle, introSubtitle, introDescription } from '../../constants';
 
 
-export default function AboutUs({isFocus}){
+export default function AboutUs(){
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
-  const ref = useRef(null);
+  const { isLoading, sendRequest } = useHttp();
+  const [ introImage, setIntroImage ] = useState();
+
+  const handleIntroData = (data) => {
+    setIntroImage(data.introImage);
+  }
 
   useEffect(() => {
-    if(isFocus)
-      ref.current.focus()
-  }, [isFocus])
+    sendRequest({method: 'GET', url: '/get-data?documentName=intro'}, handleIntroData)
+  }, [sendRequest])
   
   const Container = styled('div')({
     display: 'flex',
@@ -90,22 +97,21 @@ export default function AboutUs({isFocus}){
   },
   };
 
-
   return (
     <div id="Home" className={styles.parentContainer}>
     <Container sx={responsiveStyles}>
         <ImageContainer>
-        <Image src={intro_img} alt="My Image" />
+          { isLoading ? <CircularProgress color="secondary" /> : <Image src={introImage} alt="My Image" /> }
       </ImageContainer>
       <DescriptionContainer>
         <Title >
-            <h1>Interiorica </h1>
+            <h1>{introTitle}</h1>
         </Title>
         <Subtitle>
-            <p className='subtitle'>Your Space. Reimagined.</p>
+            <p className='subtitle'>{introSubtitle}</p>
         </Subtitle>
         <Content>
-            <p className='desc'>At Interiorica  we design residential and commercial spaces that are comfortable, personal and interesting. Great interior design is great art, reflecting who you are in ways you never imagined. Our unique perspective, grounded in both art and architecture, reflects an artist’s eye toward color and materials and a strong sense of space and form. We are artists, we are designers, and we are here to make your space better than you could have ever imagined.</p>
+            <p className='desc'>{introDescription}</p>
             <Button variant="contained" color="customButtonColor" size="medium" style={{"marginTop":"60px"}}>Learn More</Button>
         </Content>
       </DescriptionContainer>      
