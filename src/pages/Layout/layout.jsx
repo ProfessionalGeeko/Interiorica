@@ -8,6 +8,7 @@ import YoutubeCardContainer from "../../components/youtube-card/youtube-card-con
 import ScheduleConsultation from "../../components/schedule_consultation.component/schedule_consultation.component";
 import ReviewsContent from "../../components/reviews_content.component/reviews_content.component";
 import ContactUsForm from "../../components/contactusForm/contactus.component";
+import DesignGenerator from "../../components/design_generator.component/design_generator.component";
 import {Divider} from "@mui/material";
 
 const Layout = () => {
@@ -17,6 +18,7 @@ const Layout = () => {
             <Intro/>
             <Divider/>
             <AboutUs/>
+            <DesignGenerator/>
             <ResidentialDesign/>
             <CommercialDesign/>
             <Divider/>
