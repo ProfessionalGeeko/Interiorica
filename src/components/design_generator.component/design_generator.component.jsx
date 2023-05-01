@@ -5,19 +5,11 @@ import Typography from '@mui/material/Typography';
 import { useDropzone } from 'react-dropzone';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-const theme = createTheme({
-    palette: {
-      primary: {
-        main: '#8D8DAA',
-        contrastText: '#FFF',
-      },
-    },
-});
+
 const styles = {
   root: {
     display: 'flex',
@@ -79,13 +71,12 @@ export default function DesignGenerator() {
   });
 
   return (
-    <div>
-      <p style={{marginTop:"5%",textAlign:"center",fontSize:"30px"}}><b style={{color:`${prefersDarkMode ? 'rgb(30, 32, 37)': ''}`}}>Generate your own design</b></p>
+    <div style={{backgroundColor:`${prefersDarkMode ? 'rgb(30, 32, 37)': ''}`}}>
+      <p style={{paddingTop:"5%",textAlign:"center",fontSize:"30px"}}><b>Generate your own design</b></p>
       <div style={{marginTop:"4%"}}>
         <div>
             <ul style={{width:'100%',textAlign:'center'}}>
-                <li style={{listStyle:'None',marginBottom:'2%'}}><p><b style={{color:`${prefersDarkMode ? 'rgb(30, 32, 37)': ''}`}}>1. Choose your room theme</b></p><br></br>
-                    <ThemeProvider theme={theme}>
+                <li style={{listStyle:'None',marginBottom:'2%'}}><p><b>1. Choose your room theme</b></p><br></br>
                         <Select
                             value={selectedTheme}
                             onChange={handleThemeChange}
@@ -100,11 +91,9 @@ export default function DesignGenerator() {
                         <MenuItem value="Industtrial">Industtrial</MenuItem>
                         <MenuItem value="Neoclassic">Neoclassic</MenuItem>
                         </Select>
-                    </ThemeProvider>
                 </li>
                 <li style={{listStyle:'None'}}>
-                    <p><b style={{color:`${prefersDarkMode ? 'rgb(30, 32, 37)': ''}`}}>2. Choose your room type</b></p>
-                    <ThemeProvider theme={theme}>
+                    <p><b>2. Choose your room type</b></p>
                         <Select
                             value={selectedRoomType}
                             onChange={handleRoomTypeChange}
@@ -121,13 +110,11 @@ export default function DesignGenerator() {
                         <MenuItem value="Neoclassic">Gaming Room</MenuItem>
                         <MenuItem value="Neoclassic">Outdoor Patio</MenuItem>
                         </Select>
-                    </ThemeProvider>
                 </li>
-                
             </ul>
         </div>
       </div>
-      <p style={{textAlign:'center',marginTop:"3%"}}><b style={{color:`${prefersDarkMode ? 'rgb(30, 32, 37)': ''}`}}>3. Upload a picture of your room</b></p>
+      <p style={{textAlign:'center',marginTop:"3%"}}><b>3. Upload a picture of your room</b></p>
       <div style={styles.root}>
         <Card style={styles.card}>
             {processedImage && <CardContent>
@@ -175,7 +162,7 @@ export default function DesignGenerator() {
           </CardContent>
         </Card>}
       </div>
-        <div style={{display:'flex',justifyContent:'center',marginTop:"3%",marginBottom:'5%'}}>
+        <div style={{display:'flex',justifyContent:'center',marginTop:"3%",paddingBottom:'5%'}}>
             <Button color="customButtonColor" variant="contained" onClick={handleImageProcessing}>Generate Design</Button>
             <Button color="customButtonColor" variant="contained" onClick={handleReset} style={{marginLeft:'2%'}}>Reset</Button>
         </div>
