@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./reviews_content.component.styles.scss";
 import review_bg from "../../assets/images/Reviews_background.webp";
 import Carousel from "react-bootstrap/Carousel";
@@ -12,9 +12,26 @@ import galary_5 from "../../assets/images/Gallery_5.jpg";
 import { Button } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import CustomerReview from "../customer-review/CustomerReview";
+import useHttp from "../../hooks/useHttp";
 
 export default function Reviews_content() {
     const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+    const [upcomingProject, setUpcomingProject] = useState([]);
+    const [projectImagesList, setProjectImagesList] = useState([]);
+    const {isLoading, sendRequest} = useHttp();
+
+    const handleUpcomingProjectData = (data) => {
+        setUpcomingProject(data);
+    }
+
+    const handleProjectImagesData = (data) => {
+        setProjectImagesList(data.data);
+    }
+
+    useEffect(() => {
+        sendRequest({method: 'GET', url: '/get-data?documentName=upcomingProject'}, handleUpcomingProjectData);
+        sendRequest({method: 'GET', url: '/get-data?documentName=upcomingProjectImages'}, handleProjectImagesData);
+    }, [sendRequest])
 
   const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -35,33 +52,34 @@ export default function Reviews_content() {
             </div>
             <Grid container spacing={2} style={{ backgroundColor: `${prefersDarkMode ? 'rgb(30,32,37)' : '#DFDFDE'}`}}>
                 <Grid item xs={6}>
-                    <Item><CardComponent/></Item>
+                    <Item><CardComponent data={{date: upcomingProject.projectOneDate, image: upcomingProject.projectOneImage, title: upcomingProject.projectOneTitle}}/></Item>
                 </Grid>
                 <Grid item xs={6}>
-                    <Item><CardComponent/></Item>
+                    <Item><CardComponent data={{date: upcomingProject.projectTwoDate, image: upcomingProject.projectTwoImage, title: upcomingProject.projectTwoTitle}}/></Item>
                 </Grid>
             </Grid>
             <Grid container spacing={2} style={{backgroundColor:`${prefersDarkMode ? 'rgb(30,32,37)' : '#DFDFDE'}`,marginTop:"50px"}}>
             <Grid item xs={6} >
-
                     <Grid container spacing={1} style={{height:"400px"}} >
-                        <Grid item xs={6}>
-                            <img src={review_bg} alt="review_img"></img>
-                        </Grid>
-                        <Grid item xs={6}>
-                            <img src={review_bg} alt="review_img"></img>
-                        </Grid>
-                        <Grid item xs={6}>
-                            <img src={review_bg} alt="review_img"></img>
-                        </Grid>
-                        <Grid item xs={6}>
-                            <img src={review_bg} alt="review_img"></img>
-                        </Grid>
+                        {
+                            projectImagesList.slice(0,Math.min(4, projectImagesList.length)).map(url => (
+                                <Grid item xs={6}>
+                                    <img src={url} alt="review_img"></img>
+                                </Grid>
+                            ))
+                        }
                     </Grid>
-
                 </Grid>
-                <Grid item xs={6} style={{height:"410px"}}  >
-                <img src={galary_5} width="contain" alt="review_img"></img>
+                <Grid item xs={6}>
+                    <Grid container spacing={1} style={{height:"400px"}} >
+                        {
+                            projectImagesList.length > 4 && projectImagesList.slice(4).map(url => (
+                                <Grid item xs={6}>
+                                    <img src={url} width="contain" alt="review_img"></img>
+                                </Grid>
+                            ))
+                        }
+                    </Grid>
                 </Grid>
             </Grid>
         </div>

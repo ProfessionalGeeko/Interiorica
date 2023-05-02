@@ -7,22 +7,22 @@ import { Button, CardActionArea, CardActions } from '@mui/material';
 import upcomming_events from '../../assets/images/upcoming_events.webp';
 import './card.component.styles.scss';
 
-export default function CardComponent() {
+export default function CardComponent({data}) {
   return (
     <Card sx={{ maxWidth: 345 }} style={{"marginLeft":"10%","marginRight": "10%"}}>
       <CardActionArea>
         <CardMedia
           component="img"
           height="140"
-          image={upcomming_events}
+          image={data.image}
           alt="green iguana"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            WARDROBE DESIGN WORKSHOP
+              {data.title}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            TUE, MAY 20  | ZOOM
+              {data.date}
           </Typography>
         </CardContent>
       </CardActionArea>
