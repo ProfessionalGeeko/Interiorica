@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Button } from '@mui/material';
 import MyVerticallyCenteredModal from '../project_details.component/project_details.component.jsx';
+import {addCloudinaryPrefix} from "../../utils";
 
 export default function Carousel({ images, tagImages, tags }) {
   const [index, setIndex] = useState(0);
@@ -29,9 +30,10 @@ export default function Carousel({ images, tagImages, tags }) {
           <Box key={i} sx={{ flexShrink: 0, width: '100%', height: '100%', position: 'relative' }} onMouseOver={() => setHovered(true)}
           onMouseOut={() => setHovered(false)}>
             <img
-              src={images[index]}
+              src={addCloudinaryPrefix(images[index])}
               alt={`Image ${i}`}
-              style={{ width: '100%', height: '100%',opacity: `${hovered?'0.5':'1'}` }} 
+              style={{ width: '100%', height: '100%',opacity: `${hovered?'0.5':'1'}` }}
+              loading="lazy"
             />
             {hovered && (
               <Box

@@ -9,6 +9,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import useMediaQuery from "@mui/material/useMediaQuery";
 import useHttp from "../../hooks/useHttp";
 import { introTitle, introSubtitle, introDescription } from '../../constants';
+import {addCloudinaryPrefix} from "../../utils";
 
 
 export default function AboutUs(){
@@ -101,7 +102,10 @@ export default function AboutUs(){
     <div id="Home" className={styles.parentContainer}>
     <Container sx={responsiveStyles}>
         <ImageContainer>
-          { isLoading ? <CircularProgress color="secondary" /> : <Image src={introImage} alt="My Image" /> }
+          { isLoading ?
+              <CircularProgress color="secondary" /> :
+              <Image loading="lazy" src={addCloudinaryPrefix(introImage)} alt="My Image" />
+          }
       </ImageContainer>
       <DescriptionContainer>
         <Title >

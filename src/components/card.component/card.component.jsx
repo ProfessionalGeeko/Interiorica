@@ -6,12 +6,13 @@ import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import upcomming_events from '../../assets/images/upcoming_events.webp';
 import './card.component.styles.scss';
+import {addCloudinaryPrefix} from "../../utils";
 
 export default function CardComponent({data}) {
   return (
     <Card sx={{ maxWidth: 345 }} style={{"margin":'auto',"height":"500px"}}>
       
-        <img src={data.image} alt="upcomming_events" style={{"height":"300px","width":"350px"}}/>
+        <img src={addCloudinaryPrefix(data.image)} alt="upcomming_events" style={{"height":"300px","width":"350px"}}/>
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
               {data.title}

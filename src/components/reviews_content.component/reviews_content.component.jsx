@@ -13,6 +13,7 @@ import { Button } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import CustomerReview from "../customer-review/CustomerReview";
 import useHttp from "../../hooks/useHttp";
+import {addCloudinaryPrefix} from "../../utils";
 
 export default function Reviews_content() {
     const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
@@ -65,7 +66,7 @@ export default function Reviews_content() {
                                 {
                                     projectImagesList.slice(0,Math.min(4, projectImagesList.length)).map(url => (
                                         <Grid item xs={6}>
-                                            <img src={url} alt="review_img"></img>
+                                            <img src={addCloudinaryPrefix(url)} alt="review_img"></img>
                                         </Grid>
                                     ))
                                 }
@@ -76,7 +77,7 @@ export default function Reviews_content() {
                             {
                                 projectImagesList.length > 4 && projectImagesList.slice(4).map(url => (
                                     <Grid item xs={6}>
-                                        <img src={url} width="contain" alt="review_img"></img>
+                                        <img src={addCloudinaryPrefix(url)} width="contain" alt="review_img"></img>
                                     </Grid>
                                 ))
                             }
