@@ -14,31 +14,9 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import {useState, useEffect} from "react";
 import useHttp from "../../hooks/useHttp";
 import CircularProgress from "@mui/material/CircularProgress";
+import {addCloudinaryPrefix} from "../../utils";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
-
-// const images = [
-//     {
-//         label: 'Project Name',
-//         imgPath:
-//             'https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60',
-//     },
-//     {
-//         label: 'Project Name',
-//         imgPath:
-//             'https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60',
-//     },
-//     {
-//         label: 'Project Name',
-//         imgPath:
-//             'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250',
-//     },
-//     {
-//         label: 'Project Name',
-//         imgPath:
-//             'https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60',
-//     },
-// ];
 
 function SwipeableTextMobileStepper() {
     const theme = useTheme();
@@ -100,13 +78,14 @@ function SwipeableTextMobileStepper() {
                                                     <Box
                                                         back
                                                         component="img"
+                                                        loading="lazy"
                                                         sx={{
                                                             height: 255,
                                                             display: 'block',
                                                             overflow: 'hidden',
                                                             width: '100%',
                                                         }}
-                                                        src={step.clientImage}
+                                                        src={addCloudinaryPrefix(step.clientImage)}
                                                         alt={step.projectName}
                                                     />
                                                 </Grid>

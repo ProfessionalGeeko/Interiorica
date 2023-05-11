@@ -6,6 +6,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import useMediaQuery from "@mui/material/useMediaQuery";
 import useHttp from "../../hooks/useHttp";
 import { aboutUsTitle, aboutUsDescriptionOne, aboutUsDescriptionTwo } from '../../constants';
+import {addCloudinaryPrefix} from "../../utils";
 
 export default function AboutUs() {
     const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
@@ -24,7 +25,7 @@ export default function AboutUs() {
     return (
             <div id="About" style={{ backgroundColor: `${prefersDarkMode ? 'rgb(30,32,37)' : '#DFDFDE'}`}} className='wrapper'>
                 <div className='Image-container'>
-                    {isLoading ? <CircularProgress color="secondary" /> : <img src={aboutUsImage} alt="about_us" width="100%" />}
+                    {isLoading ? <CircularProgress color="secondary" /> : <img src={addCloudinaryPrefix(aboutUsImage)} loading="lazy" alt="about_us" width="100%" />}
                 </div>
                 <div className='Description'>
                     <h1>{aboutUsTitle}</h1>

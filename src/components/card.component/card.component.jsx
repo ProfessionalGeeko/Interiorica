@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import upcomming_events from '../../assets/images/upcoming_events.webp';
 import './card.component.styles.scss';
+import {addCloudinaryPrefix} from "../../utils";
 
 export default function CardComponent({data}) {
   return (
@@ -14,7 +15,8 @@ export default function CardComponent({data}) {
         <CardMedia
           component="img"
           height="140"
-          image={data.image}
+          image={addCloudinaryPrefix(data.image)}
+          loading="lazy"
           alt="green iguana"
         />
         <CardContent>
