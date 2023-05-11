@@ -52,10 +52,10 @@ export default function Reviews_content() {
             </div>
             <Grid container spacing={2} style={{ backgroundColor: `${prefersDarkMode ? 'rgb(30,32,37)' : '#DFDFDE'}`}}>
                 <Grid item xs={6} style={{backgroundColor:'transparent'}}>
-                    <Item style={{height:'100%',width:'300px',display: 'flex',backgroundColor:'transparent',boxShadow:'none',margin:'unset',marginLeft:'25%'}}><CardComponent  data={{date: upcomingProject.projectOneDate, image: upcomingProject.projectOneImage, title: upcomingProject.projectOneTitle}}/></Item>
+                    <Item style={{height:'100%',display: 'flex',backgroundColor:'transparent',boxShadow:'none',margin:'unset'}}><CardComponent  data={{date: upcomingProject.projectOneDate, image: upcomingProject.projectOneImage, title: upcomingProject.projectOneTitle}}/></Item>
                 </Grid>
                 <Grid item xs={6} style={{backgroundColor:'transparent'}}>
-                    <Item style={{height:'100%',width:'300px',display: 'flex',backgroundColor:'transparent',boxShadow:'none'}}><CardComponent data={{date: upcomingProject.projectTwoDate, image: upcomingProject.projectTwoImage, title: upcomingProject.projectTwoTitle}}/></Item>
+                    <Item style={{height:'100%',display: 'flex',backgroundColor:'transparent',boxShadow:'none'}}><CardComponent data={{date: upcomingProject.projectTwoDate, image: upcomingProject.projectTwoImage, title: upcomingProject.projectTwoTitle}}/></Item>
                 </Grid>
             </Grid>
             <div style={{display:'flex',marginTop:"50px",marginLeft:'10%'}}>
