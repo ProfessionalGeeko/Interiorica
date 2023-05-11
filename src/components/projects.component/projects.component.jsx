@@ -7,16 +7,15 @@ import Carousel from '../carousel.component/carausal.component.jsx'
 import CircularProgress from '@mui/material/CircularProgress';
 
 export default function Projects({data, designImages, tagImages, isLoading}){
+
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  
   const Container = styled('div')({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    // justifyContent: 'center',
     justifyContent: 'flex-start',
     backgroundColor: `${prefersDarkMode ? 'rgb(30,32,37);': ''}` ,
-    // marginBottom: '4rem',
-    // maxWidth: '95%',
     margin: '0 auto',
     border: '1px solid #ccc',
     overflow: 'hidden',
@@ -24,9 +23,9 @@ export default function Projects({data, designImages, tagImages, isLoading}){
     borderTopRightRadius: '0.3rem',
     boxShadow: '0px 2px 5px rgba(0, 0, 0, 0.1)',
     borderBottomColor: '#f5f5f5',
+    position: 'relative'
   });
   
-
   const ImageContainer = styled('div')({
     flex: '1 1 300px',
     height: '100%',
@@ -43,15 +42,19 @@ export default function Projects({data, designImages, tagImages, isLoading}){
 
   const DescriptionContainer = styled('div')({
       flex: '1 1 300px',
-      padding: '2rem',
+      fontSize: '1.2rem',
       marginLeft: '2rem',
-      marginRight: '2rem',
+      marginRight: '2rem'
     });
   
   const Title = styled(Typography)({
     fontWeight: 'bold',
     fontSize: '3rem',
     marginBottom: '3rem',
+    '@media (max-width: 800px)': {
+      fontSize: '1rem', // Adjust the font size for smaller screens
+      marginBottom: '1rem',
+    }
   });
   
   const Subtitle = styled(Typography)({
@@ -72,8 +75,7 @@ export default function Projects({data, designImages, tagImages, isLoading}){
       flexDirection: 'column-reverse',
       marginLeft: '0',
       '& $DescriptionContainer': {
-        marginLeft: '0',
-        padding: '1rem 2rem',
+        marginLeft: '0'
       },
       '& $ImageContainer': {
         flex: '1 1 100%',

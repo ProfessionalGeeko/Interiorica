@@ -27,7 +27,7 @@ export default function ReviewCard({data}) {
                     allowFullScreen={true}
                     autoPlay
                 />
-                <CardContent>
+                <CardContent style={{height:'150px'}}>
                     <Typography gutterBottom variant="h5" component="div">
                         {data?.title}
                     </Typography>

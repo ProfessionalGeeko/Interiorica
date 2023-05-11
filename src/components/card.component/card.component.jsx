@@ -9,14 +9,9 @@ import './card.component.styles.scss';
 
 export default function CardComponent({data}) {
   return (
-    <Card sx={{ maxWidth: 345 }} style={{"marginLeft":"10%","marginRight": "10%"}}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          height="140"
-          image={data.image}
-          alt="green iguana"
-        />
+    <Card sx={{ maxWidth: 345 }} style={{"margin":'auto',"height":"500px"}}>
+      
+        <img src={data.image} alt="upcomming_events" style={{"height":"300px","width":"350px"}}/>
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
               {data.title}
@@ -25,9 +20,9 @@ export default function CardComponent({data}) {
               {data.date}
           </Typography>
         </CardContent>
-      </CardActionArea>
-      <CardActions>
-      <Button color="customButtonColorSecondary" variant="contained" size="medium">
+      
+      <CardActions style={{display:'flex',marginTop:"20px"}}>
+      <Button color="customButtonColorSecondary" variant="contained" size="medium" style={{"margin":"auto"}}>
         Details
        </Button>
       </CardActions>

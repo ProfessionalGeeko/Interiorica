@@ -51,37 +51,39 @@ export default function Reviews_content() {
                 <p style={{color: `${prefersDarkMode ? 'white' : 'black'}`}} >Upcoming Projects</p>
             </div>
             <Grid container spacing={2} style={{ backgroundColor: `${prefersDarkMode ? 'rgb(30,32,37)' : '#DFDFDE'}`}}>
-                <Grid item xs={6}>
-                    <Item><CardComponent data={{date: upcomingProject.projectOneDate, image: upcomingProject.projectOneImage, title: upcomingProject.projectOneTitle}}/></Item>
+                <Grid item xs={6} style={{backgroundColor:'transparent'}}>
+                    <Item style={{height:'100%',width:'300px',display: 'flex',backgroundColor:'transparent',boxShadow:'none',margin:'unset',marginLeft:'25%'}}><CardComponent  data={{date: upcomingProject.projectOneDate, image: upcomingProject.projectOneImage, title: upcomingProject.projectOneTitle}}/></Item>
                 </Grid>
-                <Grid item xs={6}>
-                    <Item><CardComponent data={{date: upcomingProject.projectTwoDate, image: upcomingProject.projectTwoImage, title: upcomingProject.projectTwoTitle}}/></Item>
-                </Grid>
-            </Grid>
-            <Grid container spacing={2} style={{backgroundColor:`${prefersDarkMode ? 'rgb(30,32,37)' : '#DFDFDE'}`,marginTop:"50px"}}>
-            <Grid item xs={6} >
-                    <Grid container spacing={1} style={{height:"400px"}} >
-                        {
-                            projectImagesList.slice(0,Math.min(4, projectImagesList.length)).map(url => (
-                                <Grid item xs={6}>
-                                    <img src={url} alt="review_img"></img>
-                                </Grid>
-                            ))
-                        }
-                    </Grid>
-                </Grid>
-                <Grid item xs={6}>
-                    <Grid container spacing={1} style={{height:"400px"}} >
-                        {
-                            projectImagesList.length > 4 && projectImagesList.slice(4).map(url => (
-                                <Grid item xs={6}>
-                                    <img src={url} width="contain" alt="review_img"></img>
-                                </Grid>
-                            ))
-                        }
-                    </Grid>
+                <Grid item xs={6} style={{backgroundColor:'transparent'}}>
+                    <Item style={{height:'100%',width:'300px',display: 'flex',backgroundColor:'transparent',boxShadow:'none'}}><CardComponent data={{date: upcomingProject.projectTwoDate, image: upcomingProject.projectTwoImage, title: upcomingProject.projectTwoTitle}}/></Item>
                 </Grid>
             </Grid>
+            <div style={{display:'flex',marginTop:"50px",marginLeft:'10%'}}>
+                <Grid container spacing={2} style={{backgroundColor:`${prefersDarkMode ? 'rgb(30,32,37)' : '#DFDFDE'}`,margin:'auto'}}>
+                    <Grid item xs={6} >
+                            <Grid container spacing={1} style={{height:"400px"}} >
+                                {
+                                    projectImagesList.slice(0,Math.min(4, projectImagesList.length)).map(url => (
+                                        <Grid item xs={6}>
+                                            <img src={url} alt="review_img"></img>
+                                        </Grid>
+                                    ))
+                                }
+                            </Grid>
+                    </Grid>
+                    <Grid item xs={6}>
+                        <Grid container spacing={1} style={{height:"400px"}} >
+                            {
+                                projectImagesList.length > 4 && projectImagesList.slice(4).map(url => (
+                                    <Grid item xs={6}>
+                                        <img src={url} width="contain" alt="review_img"></img>
+                                    </Grid>
+                                ))
+                            }
+                        </Grid>
+                    </Grid>
+            </Grid>
+            </div>
         </div>
     </div>
   );
