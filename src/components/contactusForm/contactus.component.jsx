@@ -13,6 +13,7 @@ import {ContactUsSchema} from "../../validationSchema/contactUsValidationSchema"
 import BasicModal from "../modal.component/modal.component";
 import {useState} from "react";
 
+import {IconButton} from "@mui/material";
 import axios from "axios";
 
 import { contactUsTitle, contactUsDescription, contactUs, contactUsEmail, contactUsAddress } from "../../constants";
@@ -84,9 +85,15 @@ const ContactUsForm = () => {
           {contactUsEmail}
         </Typography>
         <Stack direction="row" spacing={2}>
-          <FacebookIcon />
-          <InstagramIcon />
-          <YouTubeIcon />
+          <IconButton href="https://www.facebook.com/singhsinterior/" target="_blank">
+            <FacebookIcon />
+          </IconButton>
+          <IconButton href="https://www.instagram.com/singhsinterior/" target="_blank">
+            <InstagramIcon />
+          </IconButton>
+          <IconButton href="https://www.youtube.com/@Singh_sInteriors" target="_blank">
+            <YouTubeIcon />
+          </IconButton>
         </Stack>
         <BasicModal title={'Thank You!'} description={"We have received your request, our support members will soon contact you!"} open={open} handleOpen={handleOpen} handleClose={handleClose} />
         <Box
