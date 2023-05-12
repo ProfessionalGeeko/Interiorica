@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Grid, Button, useMediaQuery} from '@mui/material';
 import FixedSizeImage from '../image.component/image_size.component';
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
+import { addCloudinaryPrefix } from '../../utils';
 
 export default function ImageGrid({ images }) {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -27,7 +28,7 @@ export default function ImageGrid({ images }) {
           images.map((image, index) => (
             <Grid item key={index} xs={6} sm={6} md={4}>
               <img
-                src={image}
+                src={addCloudinaryPrefix(image)}
                 onClick={() => handleImageClick(index)}
                 style={{ cursor: 'pointer',objectFit: 'cover'  }}
                 width="240px"
@@ -54,7 +55,7 @@ export default function ImageGrid({ images }) {
               >
                 <CloseOutlinedIcon  style={{color:"#FFF",backgroundColor:"#8D8DAA",borderRadius:"100px",height:"30px","width":"30px",borderColor:"black"}}/>
               </Button>
-              <FixedSizeImage src={selectedImage} width="200px" height={isSmallScreen ? 'auto' : '400px'} />
+              <FixedSizeImage src={addCloudinaryPrefix(selectedImage)} width="200px" height={isSmallScreen ? 'auto' : '400px'} />
             </div>
           </Grid>
         )}

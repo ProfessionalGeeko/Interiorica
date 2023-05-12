@@ -42,8 +42,8 @@ export default function MyVerticallyCenteredModal({images, tags, onHide, ...othe
         </Modal.Title>
       </Modal.Header>
       <Modal.Body style={{height:'480px',overflowY:"scroll"}}>
-        {show_whole_image && selectedImage &&  <FixedSizeImage src={addCloudinaryPrefix(selectedImage)} width="200px" height="400" />}
-        {!show_whole_image  && <ImageGrid images={addCloudinaryPrefix(images[tag])} />}
+        {show_whole_image && selectedImage &&  <FixedSizeImage src={selectedImage} width="200px" height="400" />}
+        {!show_whole_image  && <ImageGrid images={images[tag]} />}
       </Modal.Body>
       <Modal.Footer>
         <Button style={{backgroundColor:'#8D8DAA',padding: '10px 40px',borderColor:'#8D8DAA'}}onClick={onHide}>Close</Button>

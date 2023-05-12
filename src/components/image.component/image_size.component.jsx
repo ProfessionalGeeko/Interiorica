@@ -1,8 +1,9 @@
 import React from 'react';
+import { addCloudinaryPrefix } from '../../utils';
 
 const FixedSizeImage = ({ src, width, height }) => {
   return (
-    <img src={src} style={{ width: `100%`,minWidth:`${width}px`, height:`${height}`,objectFit: 'cover' }} />
+    <img src={addCloudinaryPrefix(src)} style={{ width: `100%`,minWidth:`${width}px`, height:`${height}`,objectFit: 'cover' }} />
   );
 };
 
