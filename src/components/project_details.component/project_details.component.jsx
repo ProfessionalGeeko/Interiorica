@@ -5,6 +5,7 @@ import FixedSizeImage from '../image.component/image_size.component';
 import ImageGrid from '../grid.component/grid.component';
 import './project_details.styles.scss';
 import "bootstrap/dist/css/bootstrap.min.css";
+import { addCloudinaryPrefix } from '../../utils';
 
 export default function MyVerticallyCenteredModal({images, tags, onHide, ...otherProps}) {
     const show_whole_image = false;
@@ -41,8 +42,8 @@ export default function MyVerticallyCenteredModal({images, tags, onHide, ...othe
         </Modal.Title>
       </Modal.Header>
       <Modal.Body style={{height:'480px',overflowY:"scroll"}}>
-        {show_whole_image && selectedImage &&  <FixedSizeImage src={selectedImage} width="200px" height="400" />}
-        {!show_whole_image  && <ImageGrid images={images[tag]} />}
+        {show_whole_image && selectedImage &&  <FixedSizeImage src={addCloudinaryPrefix(selectedImage)} width="200px" height="400" />}
+        {!show_whole_image  && <ImageGrid images={addCloudinaryPrefix(images[tag])} />}
       </Modal.Body>
       <Modal.Footer>
         <Button style={{backgroundColor:'#8D8DAA',padding: '10px 40px',borderColor:'#8D8DAA'}}onClick={onHide}>Close</Button>
