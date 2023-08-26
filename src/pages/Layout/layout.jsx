@@ -19,7 +19,6 @@ const Layout = () => {
             <Intro/>
             <Divider/>
             <AboutUs/>
-            <DesignGenerator/>
             <ResidentialDesign/>
             <CommercialDesign/>
             <Divider/>
