@@ -31,6 +31,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "CI='' react-scripts build",
+    "build:aws": "react-scripts build",
     "test": "NODE_OPTIONS=--experimental-vm-modules react-scripts test",
     "eject": "react-scripts eject"
   },
