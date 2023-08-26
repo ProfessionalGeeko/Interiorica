@@ -24,13 +24,13 @@ const ContactUsForm = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const saveContactUsRequest = async (formData) => {
-    try {
-      const docRef = await addDoc(collection(db, "contactUsRequests"), formData);
-    } catch (e) {
-      alert("Something went wrong! Please try again")
-    }
-  }
+  // const saveContactUsRequest = async (formData) => {
+  //   try {
+  //     const docRef = await addDoc(collection(db, "contactUsRequests"), formData);
+  //   } catch (e) {
+  //     alert("Something went wrong! Please try again")
+  //   }
+  // }
 
   const formik = useFormik({
     initialValues: {
@@ -42,7 +42,8 @@ const ContactUsForm = () => {
     validationSchema: ContactUsSchema,
     onSubmit: async values => {
       try{
-        await saveContactUsRequest(values)
+        await axios.post('https://interiorica-backend.onrender.com/admin/contact-us', values);
+        // await saveContactUsRequest(values)
         handleOpen();
         await axios.post('https://interiorica-backend.onrender.com/sendEmail', values);
       } catch (e) {
