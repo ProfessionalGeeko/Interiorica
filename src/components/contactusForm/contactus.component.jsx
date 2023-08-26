@@ -4,9 +4,6 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
-import { addDoc, collection } from "firebase/firestore";
-import { db } from "../../firebaseConfig";
-
 import { useFormik } from 'formik';
 import {ContactUsSchema} from "../../validationSchema/contactUsValidationSchema";
 
@@ -24,13 +21,6 @@ const ContactUsForm = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  // const saveContactUsRequest = async (formData) => {
-  //   try {
-  //     const docRef = await addDoc(collection(db, "contactUsRequests"), formData);
-  //   } catch (e) {
-  //     alert("Something went wrong! Please try again")
-  //   }
-  // }
 
   const formik = useFormik({
     initialValues: {
@@ -43,7 +33,6 @@ const ContactUsForm = () => {
     onSubmit: async values => {
       try{
         await axios.post('https://interiorica-backend.onrender.com/admin/contact-us', values);
-        // await saveContactUsRequest(values)
         handleOpen();
         await axios.post('https://interiorica-backend.onrender.com/sendEmail', values);
       } catch (e) {
